@@ -1,0 +1,30 @@
+<div class="teachers-heading mt-5">
+      <center><h1>Available Teachers</h1></center>
+</div>
+
+<div class="cards">
+  <% @users.each do |user| %>
+    <% if user.teacher %>
+      <div class="card">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(<%=%>)">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to "#{user.first_name.capitalize} #{user.last_name.capitalize}", user_path(user)%></h5>
+          <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary"%>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+<br>
+
+
+<div class="map-styling">
+  <div class="map"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
