@@ -15,12 +15,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_161014) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "user_teacher_id", null: false
-    t.bigint "user_student_id", null: false
+    t.integer "user2_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_student_id"], name: "index_bookings_on_user_student_id"
-    t.index ["user_teacher_id"], name: "index_bookings_on_user_teacher_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "language_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_languages", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "language_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_user_languages_on_language_id"
+    t.index ["user_id"], name: "index_user_languages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_161014) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "users", column: "user_student_id"
-  add_foreign_key "bookings", "users", column: "user_teacher_id"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "user_languages", "languages"
+  add_foreign_key "user_languages", "users"
 end
