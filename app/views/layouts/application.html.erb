@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LingoBuddy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+      <title>LingoBuddy</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <body>
+      <div class="navbar-container"><%= render "shared/navbar" %></div>
+      <div class="container mt-3">
+        <div class="page-container">
+          <%= render "shared/flashes" %>
+          <div class="content-container"><%= yield %></div>
+        </div>
+      </div>
+        <div class="footer-container"><%= render "shared/footer" %></div>
+    </body>
 </html>
