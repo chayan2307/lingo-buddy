@@ -1,8 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-</a>
+    <a class="navbar-brand d-flex" href="/">
+      <img src="https://flyclipart.com/thumb2/box-bubble-chat-chatbox-dialog-group-messege-icon-615914.png" />
+      <h1>Lingo Buddy</h1>
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,16 +12,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <%# <a class="nav-link" href="#">Login</a> %>
+            <%= link_to "Log In", new_user_session_path %>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <%# <a class="nav-link" href="#">Sign Up</a> %>
+            <%= link_to "Sign Up", new_user_registration_path  %>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Languages</a>
               <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+
             </div>
           </li>
           <!--li class="nav-item"-->
