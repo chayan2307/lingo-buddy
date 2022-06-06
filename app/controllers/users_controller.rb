@@ -1,21 +1,21 @@
 class UsersController < ApplicationController
-  def show
-    user = User.find(params[:id])
-  end
-
   def index
-    users = User.all
+    @users = User.all
   end
 
-  def new
-    user = User.new
+  def show
+    @user = User.find(params[:id])
   end
 
-  def create
-    user = User.new(params[:id])
-    user.save
-  end
+  # def new
+  #   user = User.new
+  # end
 
-  def destroy
-  end
+  # def create
+  #   user = User.new(params[:id])
+  #   user.save
+  # end
+
+  # def destroy
+  # end
 end
