@@ -6,10 +6,12 @@
   <% @users.each do |user| %>
     <% if user.teacher %>
       <div class="card">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(<%=%>)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(<%= user.photo_url %>)">
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= link_to "#{user.first_name.capitalize} #{user.last_name.capitalize}", user_path(user)%></h5>
+          <p><%= "Languages Spoken: #{user.languages}" %></p>
+          <p><%= "Location: #{user.location}" %></p>
           <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary"%>
         </div>
       </div>
