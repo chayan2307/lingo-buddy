@@ -1,9 +1,11 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/bogart');
+@import url(//db.onlinewebfonts.com/c/c36a75c5ada59665e225bbf5e38efd34?family=Averta-Bold);
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Averta", "Helvetica", "sans-serif";
+$headers-font: "Bogart", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
