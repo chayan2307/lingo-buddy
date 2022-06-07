@@ -13,21 +13,26 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    @booking.user2_id = params[:user_id]
+    @booking.user_student_id = current_user.id
+    @booking.user_teacher_id = params[:user_id]
     @booking.save!
-    # redirect_to my_bookings_path
+    redirect_to my_bookings_path
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    # redirect_to my_bookings_path, status: :see_other
+    redirect_to my_bookings_path, status: :see_other
+  end
+
+  def my_bookings
+    @my_bookings = Booking.where(user_student_id: current_user.id)
+    @my_bookings = Booking.where(user_teacher_id: current_user.id)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id, :user2_id)
+    params.require(:booking).permit(:start_date, :end_date, :user_student_id, :user_teacher_id)
   end
 end
