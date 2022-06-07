@@ -25,6 +25,12 @@
   align-content: space-between;
 }
 
+.card-review {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
