@@ -1,8 +1,6 @@
-  <div class="container mb-3 mt-3" style = "margin-left: 50px">
     <h1 class='mb-3 text-primary display-6 text-black'><strong>Send Booking Request</strong></h1>
       <%= simple_form_for ([@user, @booking]) do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :time, as: :time, html5: true %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
-  </div>
