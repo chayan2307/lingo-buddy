@@ -25,14 +25,21 @@ class BookingsController < ApplicationController
     redirect_to my_bookings_path, status: :see_other
   end
 
+  def confirm
+    @booking = Booking.find(params[:id])
+    @booking.confirmed = true
+    @booking.save
+    redirect_to my_bookings_path
+  end
+
   def my_bookings
-    @my_bookings = Booking.where(user_student_id: current_user.id)
-    @my_bookings = Booking.where(user_teacher_id: current_user.id)
+    @student_bookings = Booking.where(user_student_id: current_user.id)
+    @teacher_bookings = Booking.where(user_teacher_id: current_user.id)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_student_id, :user_teacher_id)
+    params.require(:booking).permit(:start_date, :end_date, :user_student_id, :user_teacher_id, :time)
   end
 end
