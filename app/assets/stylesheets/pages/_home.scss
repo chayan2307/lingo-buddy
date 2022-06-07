@@ -1,16 +1,39 @@
 // Specific CSS for your home-page
+.background {
+  background-color: rgb(223, 221, 221);
+}
+
 .home-container {
-  width: 100vw;
+  width: 100%;
   height: 80vh;
+  background-image: image-url("cover-new.jpg");
 }
 
 .cover-container {
-  border: solid;
+  margin: 24px;
+  padding:16px;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.front-box {
   margin: 24px;
   padding:16px;
   width: 800px;
-  height: 350px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.text-box {
+  margin: 24px;
+  padding:16px;
+  text-align: center;
+}
+
+.container {
+  margin: 24px;
 }

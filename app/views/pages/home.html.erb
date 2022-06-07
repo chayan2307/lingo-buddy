@@ -1,13 +1,58 @@
-
-<div class="home-container mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../assets/images/colorbackground.jpg');">
-    <h1>Welcome to LingoBuddy</h1>
-  <div class="cover-container">
-      <%# <img src="../assets/images/home-photo.jpg" alt="to learn language" width="300" height="300" > %>
-      <div>
-        <h1>Start your journey here</h1>
-        <p>Enter your location</p>
-        <p>Enter your languages</p>
-        <button type="button" class="btn btn-primary">Let's go</button>
+<div class="background">
+  <div class="home-container">
+      <div class="text-box">
+        <h1>Welcome to LingoBuddy</h1>
       </div>
+    <div class="cover-container" >
+      <div>
+        <%= image_tag "home-photo", height: '400', width: '400' %>
+      </div>
+        <div class="container">
+            <h1>Start your journey here</h1>
+          <form id="search-form" class="row">
+            <div class="container">
+              <input id="search-input" type="text" class="form-control" placeholder="Enter your location">
+            </div>
+              <div class="container">
+                <input id="search-input" type="text" class="form-control" placeholder="Enter your languages">
+              </div>
+                <div class="container">
+                 <input type="submit" class="btn btn-primary" value="Search">
+                </div>
+          </form>
+        </div>
+        <%# <div>
+          <h1>Start your journey here</h1>
+          <p>Enter your location</p>
+          <p>Enter your languages</p>
+          <button type="button" class="btn btn-primary">Let's go</button>
+        </div> %>
+    </div>
+  </div>
+    <div class="container">
+      <div class="text-box">
+        <h1>How does LingoBuddy works?</h1>
+      </div>
+          <div class="front-box">
+            <%= image_tag "signup.jpg", height: '250', width: '250' %>
+            <div>
+              <h2>Sign up for the app</h2>
+            </div>
+          </div>
+          <div class="front-box">
+            <%= image_tag "peoplearound.png", height: '250', width: '250' %>
+            <div>
+              <h2>Find your language partner</h2>
+            </div>
+          </div>
+            <div class="front-box">
+              <%= image_tag "chat-image.png", height: '250', width: '250' %>
+              <div>
+                <h2>Start the conversation!</h2>
+              </div>
+            </div>
+            <%# <%= image_tag "colorbackground.jpg"%>
+    </div>
   </div>
 </div>
+
