@@ -3,7 +3,6 @@
   flex-direction: column;
   align-content: space-between;
   align-items: center;
-  margin-left: 0px;
 }
 
 .card-grid {
@@ -23,6 +22,27 @@
   display: flex;
   flex-direction: row;
   align-content: space-between;
+}
+
+
+.card-review {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+
+ .card-show {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+}
+
+.card-show h1 {
+  color: Blue;
+}
+
+.card-show p {
+  font-size: larger;
 }
 
 // Smallest device

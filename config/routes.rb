@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   end
   resources :bookings
   get '/my_bookings', to: "bookings#my_bookings"
+  get '/confirm/:id', to: "bookings#confirm"
   root to: "pages#home"
 end

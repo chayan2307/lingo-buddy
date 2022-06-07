@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(80, 187, 223);
+  background: rgb(198, 186, 167);
   height: 60px;
   opacity: 0.8;
   position: fixed;
@@ -16,9 +16,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 80px;
-  margin-left: 20px;
+  margin-left: 32px;
   margin-right: 10px;
-  background-color: rgb(251, 176, 76);
+  background-color: rgb(198, 186, 167);
 }
 
 .logo-photo {
@@ -33,7 +33,7 @@ h1 {
 }
 
 .img {
-  background-color: rgb(251, 176, 76);
+  background-color: rgb(198, 186, 167);
   border-radius: 50%;
 }
 
@@ -43,14 +43,9 @@ h1 {
   padding-top: 15px;
 }
 
-
 .avatar {
-  width: 40px;
+  width: 50px;
   border-radius: 50%;
-}
-
-.log-in {
-  background: blueviolet !important;
 }
 
 #lingo {

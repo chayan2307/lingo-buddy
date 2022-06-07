@@ -43,9 +43,27 @@
   margin: 24px;
 }
 
+
 .container-search {
   margin-top: 24px;
   padding: 24px;
   align-items: center;
   width: 600px;
+
+h2  {
+  color: white;
+}
+
+.card-review {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container-reviews {
+  background-color: rgb(236, 198, 177);
+
 }
