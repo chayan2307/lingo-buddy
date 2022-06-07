@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   # has_many :languages, through: :user_language
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
