@@ -10,6 +10,12 @@ class UsersController < ApplicationController
         image_url: helpers.asset_url('logo.png')
       }
     end
+    if params[:query].present?
+      sql_query = "location ILIKE :query OR languages ILIKE :query"
+      @users = User.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @users = User.all
+    end
   end
 
   def show

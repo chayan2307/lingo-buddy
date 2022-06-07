@@ -28,12 +28,43 @@
   align-items: center;
 }
 
-.text-box {
-  margin: 24px;
+.index-box {
   padding:16px;
+  width: 800px;
+  align-items: center;
+}
+
+.text-box {
+  padding:24px;
   text-align: center;
 }
 
 .container {
   margin: 24px;
+}
+
+
+.container-search {
+  margin-top: 24px;
+  padding: 24px;
+  align-items: center;
+  width: 600px;
+
+h2  {
+  color: white;
+}
+
+.card-review {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container-reviews {
+  background-color: rgb(236, 198, 177);
+
+}
 }

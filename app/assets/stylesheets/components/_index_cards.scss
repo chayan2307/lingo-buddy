@@ -24,7 +24,13 @@
   align-content: space-between;
 }
 
-.card-show {
+
+.card-review {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+
+ .card-show {
   display: flex;
   flex-direction: row;
   align-content: space-between;
@@ -72,4 +78,5 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
 }
