@@ -12,3 +12,6 @@ application.register("location-autocomplete", LocationAutocompleteController)
 
 import MapController from "./map_controller.js"
 application.register("map", MapController)
+
+import SearchUsersController from "./search_users_controller.js"
+application.register("search-users", SearchUsersController)
