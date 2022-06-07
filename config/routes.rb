@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
-
+  get 'users/index'
   devise_for :users
-  resources :users, only: %i[index show] do
-    resources :bookings
+  resources :users do
+    resources :bookings, only: [:new, :create]
   end
+  resources :bookings
+  get '/my_bookings', to: "bookings#my_bookings"
+  root to: "pages#home"
 end
