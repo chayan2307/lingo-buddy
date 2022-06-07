@@ -1,7 +1,8 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding-top: 150px;
+  padding-bottom: 100px;
 }
 
 .banner h1 {
@@ -29,5 +30,6 @@
 }
 
 .banner a:hover {
-  color: black;
+  opacity: 0.6;
+  color: white;
 }
