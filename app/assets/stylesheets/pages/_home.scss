@@ -57,14 +57,19 @@ h2  {
 .card-review {
   display: flex;
   flex-direction: row;
-  align-content: space-between;
+  align-content: center;
   justify-content: center;
   align-items: center;
 }
 
+ .card-show {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+ }
 
 .container-reviews {
   background-color: rgb(236, 198, 177);
-
+  align-items: center;
 }
 }
