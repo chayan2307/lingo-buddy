@@ -1,38 +1,29 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex inline" href="/">
-      <img src="https://flyclipart.com/thumb2/box-bubble-chat-chatbox-dialog-group-messege-icon-615914.png" />
-      <h1 id="lingo">Lingo Buddy</h1>
-    </a>
-
+    <a class="navbar-brand" href="#">
+      <img  src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" />
+</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <%# <a class="nav-link" href="#">Login</a> %>
-            <%= link_to "Log In", new_user_session_path, class:"btn btn-danger me-3 log-in" %>
+          <li class="nav-item active">
+           <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.clipartmax.com/png/small/136-1363971_author-image-logo-user-png.png" />
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">My Bookings</a>
+                <a class="dropdown-item" href="/users/sign_out">Sign Out</a>
+              </div>
+            </li>
+            <% else %>
+              <%= link_to "Log In", new_user_session_path, class:"btn btn-danger me-3 log-in" %>
+              <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-light me-5 sign-up" %>
+             <% end %>
           </li>
-
-          <li class="nav-item">
-            <%# <a class="nav-link" href="#">Sign Up</a> %>
-            <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-light me-5"  %>
-          </li>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle me-3" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Languages</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
       </ul>
     </div>
   </div>
