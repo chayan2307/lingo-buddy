@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(251, 176, 76);
+  background: rgb(80, 187, 223);
   height: 60px;
   opacity: 0.8;
   position: fixed;
@@ -32,8 +32,9 @@ h1 {
   text-shadow: 1px;
 }
 
-.img{
-  background-color:rgb(251, 176, 76);
+.img {
+  background-color: rgb(251, 176, 76);
+  border-radius: 50%;
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
