@@ -1,5 +1,5 @@
 <div class="container">
-<center> <h1>Bookings</h1></center>
+<center><h1 style="color:black">Bookings</h1></center>
   <% if current_user.teacher? %>
     <%= render 'teacher-bookings', my_bookings: @teacher_bookings %>
   <% else %>
