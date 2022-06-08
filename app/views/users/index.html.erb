@@ -1,14 +1,14 @@
-<div class="index-background-image">
+<div class="index-background">
 
 <div class="teachers-heading mt-0">
   <br>
-  <center><h1 style="color:white">Available Teachers</h1></center>
+  <center><h1 style="color:black">Available Teachers</h1></center>
 </div>
 <div class="container card-map">
   <div class="container card-grid mb-2 mt-3">
     <% @users.shuffle.each do |user| %>
       <% if user.teacher %>
-        <div class="card" style="width: 16rem;">
+        <div class="card" style="width: 16rem; background-color:rgb(217, 208, 197)">
           <img src="<%= user.photo_url %>" class="user-img" alt="Profile Picture">
           <h5 style="color:black" class="card-title mt-2"><%= link_to "#{user.first_name.capitalize} #{user.last_name.capitalize}", user_path(user)%></h5>
           <div class="card-body">
