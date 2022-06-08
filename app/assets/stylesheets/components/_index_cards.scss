@@ -3,11 +3,20 @@
   flex-direction: column;
   align-content: space-between;
   align-items: center;
+  color: black;
+
+  h5 a {
+    color: black;
+  }
+
+  h5 a:hover {
+    color: rgb(184, 111, 106);
+  }
 }
 
-.card:hover {
-  opacity: 0.7;
-}
+// .card:hover {
+//   opacity: 0.9;
+// }
 
 .card img {
   width: 250px;
