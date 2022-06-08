@@ -1,0 +1,39 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @language.photo_url %>);">
+  <div class="container">
+    <br>
+    <br>
+    <center><h1>Learn <strong><%= @language.language_name%></strong> with your Lingo Buddy</h1></center>
+    <br>
+    <br>
+  </div>
+</div>
+
+<div class="teachers-heading mt-0">
+  <br>
+  <center><h1>Available Teachers</h1></center>
+</div>
+
+<div class="container card-map">
+  <div class="container card-grid mb-2 mt-3">
+    <% @filtered_users.shuffle.each do |user| %>
+      <% if user.teacher %>
+        <div class="card" style="width: 16rem;">
+          <img src="<%= user.photo_url %>" class="card-img-top" alt="Profile Picture">
+          <h5 class="card-title mt-2"><%= link_to "#{user.first_name.capitalize} #{user.last_name.capitalize}", user_path(user)%></h5>
+          <div class="card-body">
+            <p><b>Languages Spoken: </b><%= "#{user.languages}" %></p>
+            <p><b>Location: </b><%= "#{user.location}" %></p>
+            <p><b>Rate: </b><%= "£#{user.rate}" %>/hour</p>
+          </div>
+          <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary mb-2"%>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="container" style=" position: sticky; top: 0; width: 100%; height: 660px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>

@@ -17,6 +17,17 @@ languages = ['Spanish', 'French', 'Italian', 'German', 'Korean', 'Japanese', 'Ru
 
 puts 'Creating users..'
 
+# Language SEEDS BELOW
+
+Language.create(language_name: "English", photo_url: "https://wallpaperaccess.com/full/32525.jpg")
+Language.create(language_name: "Spanish", photo_url: "https://wallpaperaccess.com/full/1322197.jpg")
+Language.create(language_name: "French", photo_url: "https://wallpaperaccess.com/full/296479.jpg")
+Language.create(language_name: "Italian", photo_url: "https://wallpaperaccess.com/full/115103.jpg")
+Language.create(language_name: "German", photo_url: "https://wallpaperaccess.com/full/775607.jpg")
+Language.create(language_name: "Korean", photo_url: "https://wallpaperaccess.com/full/17672.jpg")
+Language.create(language_name: "Japanese", photo_url: "https://wallpaperaccess.com/full/39492.jpg")
+Language.create(language_name: "Russian", photo_url: "https://wallpaperaccess.com/full/8198371.jpg")
+
 # STUDENT SEEDS BELOW
 
 User.create(email: 'deborah@email.com', rate: 10, first_name: 'Deborah', last_name: 'Reis', password: "123456")
