@@ -18,10 +18,18 @@
       <h5 style="color:black">Send Booking Request</h5>
       <%= simple_form_for ([@user, @booking]) do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
-        <%= f.input :time, as: :time %>
+        <%= f.input :time, as: :string, placeholder: 'Suggest a time' %>
         <p><%= f.button :submit, class: 'btn btn-primary' %></p>
       <% end %>
     <% else %>
     <% end %>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
