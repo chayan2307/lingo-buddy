@@ -38,10 +38,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def confirm
+    @user = current_user
+    @user.teacher = true
+    @user.save
+  end
+
   def update
     @user = current_user
+    @user.teacher = true
     if @user.update(user_params)
-      redirect_to users_path
+      redirect_to user_path(@user)
     else
       render "edit", status: :unprocessable_entity
     end
@@ -49,6 +56,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:languages, :location, :rate)
+    params.require(:user).permit(:languages, :location, :rate, :teacher, :photo_url)
   end
 end
