@@ -1,18 +1,9 @@
 <div class="container">
-<% if @my_bookings.present? %>
-  <center><h1 style="color:black">Bookings</h1></center>
-    <% if current_user.teacher? %>
-      <%= render 'teacher-bookings', my_bookings: @teacher_bookings %>
-    <% else %>
-      <%= render 'student-bookings', my_bookings: @student_bookings %>
-    <% end %>
+  <% if current_user.teacher? %>
+    <%= render 'teacher-bookings', my_bookings: @teacher_bookings %>
   <% else %>
-    <div class="container">
-    <br>
-    <br>
-    <br>
-    <center><%= link_to "No bookings yet..let's find you a Lingo Buddy!", users_path, class:'btn btn-primary btn-lg'%></center>
-   <% end %>
+    <%= render 'student-bookings', my_bookings: @student_bookings %>
+  <% end %>
   <br>
   <br>
   <br>
