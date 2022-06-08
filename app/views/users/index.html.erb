@@ -26,7 +26,7 @@
           <div class="card-body">
             <p><b>Languages Spoken: </b><%= "#{user.languages}" %></p>
             <p><b>Location: </b><%= "#{user.location}" %></p>
-            <p><b>Rate: </b><%= "$#{user.rate}" %></p>
+            <p><b>Rate: </b><%= "£#{user.rate}" %>/hour</p>
           </div>
           <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary mb-2"%>
         </div>
