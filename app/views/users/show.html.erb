@@ -1,9 +1,9 @@
-<div class="background-image">
+<%# <div class="background-image"> %>
 
 <div class="container card-show mt-0 mb-0">
   <div class="container">
     <h1>Teacher Details</h1>
-    <div class="card" style="width: 32rem;">
+    <div class="cards" style="width: 32rem;">
       <img src="<%= @user.photo_url %>" class="card-img-top" alt="Profile Picture">
       <h5 class="card-title mt-2"><%= link_to "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></h5>
       <div class="card-body">
@@ -22,4 +22,4 @@
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
   </div>
-</div>
+<%# </div> %>
