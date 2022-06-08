@@ -14,6 +14,13 @@
   object-fit: content;
 }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: center;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
