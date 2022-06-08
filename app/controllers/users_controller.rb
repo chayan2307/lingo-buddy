@@ -34,15 +34,28 @@ class UsersController < ApplicationController
     @booking = Booking.new
   end
 
-  # def new
-  #   user = User.new
-  # end
+  def edit
+    @user = User.find(params[:id])
+  end
 
-  # def create
-  #   user = User.new(params[:id])
-  #   user.save
-  # end
+  def confirm
+    @user = current_user
+    @user.teacher = true
+    @user.save
+  end
 
-  # def destroy
-  # end
+  def update
+    @user = current_user
+    @user.teacher = true
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render "edit", status: :unprocessable_entity
+    end
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:languages, :location, :rate, :teacher, :photo_url)
+  end
 end

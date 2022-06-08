@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_06_08_160826) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_160826) do
     t.string "start_date"
     t.string "end_date"
     t.boolean "confirmed", default: false
-    t.time "time"
+    t.string "time"
     t.index ["user_student_id"], name: "index_bookings_on_user_student_id"
     t.index ["user_teacher_id"], name: "index_bookings_on_user_teacher_id"
   end

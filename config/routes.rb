@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'users/index'
+
   devise_for :users
+
   resources :users do
     resources :bookings, only: [:new, :create]
   end

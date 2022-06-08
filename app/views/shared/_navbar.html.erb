@@ -21,7 +21,7 @@
 
     <div class="index-box">
       <%= form_tag users_path, method: :get, class:"d-flex" do %>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search by language/location" %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search by language or location" %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
@@ -39,6 +39,10 @@
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <%= image_tag "user-icon.png" %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/my_bookings">My Bookings</a>
+                <% if current_user.teacher? == false %>
+                  <a class="dropdown-item" href=<%="users/#{current_user.id}/edit"%>>Become a Lingo Buddy!</a>
+                <% else %>
+                <% end %>
                 <a class="dropdown-item" href="/users/sign_out">Sign Out</a>
               </div>
             </li>

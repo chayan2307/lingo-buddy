@@ -1,25 +1,35 @@
-<%# <div class="background-image"> %>
+<div class="background-image-show">
 
 <div class="container card-show mt-0 mb-0">
-  <div class="container">
-    <h1>Teacher Details</h1>
+  <img src="<%= @user.photo_url %>" class="card-img-top-show mt-5 mb-5" alt="Profile Picture">
+  <div class="container mb-5 mt-5">
     <div class="cards" style="width: 32rem;">
-      <img src="<%= @user.photo_url %>" class="card-img-top" alt="Profile Picture">
-      <h5 class="card-title mt-2"><%= link_to "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></h5>
       <div class="card-body">
-        <p><b>Languages Spoken: </b><%= "#{@user.languages}" %></p>
-        <p><b>Location: </b><%= "#{@user.location}" %></p>
-        <p><b>Rate: </b><%= "£#{@user.rate}" %>/hour</p>
+        <h1 style="color:black"><strong><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></strong></h1>
+        <center><h4><b>Languages Spoken: </b><%= "#{@user.languages}" %></h4></center>
+        <h4><b>Location: </b><%= "#{@user.location}" %></h4>
+        <h4><b>Rate: </b><%= "£#{@user.rate}" %>/hour</h4>
       </div>
     </div>
   </div>
 
-  <div class="container">
-  <h1 class='mb-3 text-primary display-6 text-black'><strong>Send Booking Request</strong></h1>
-  <%= simple_form_for ([@user, @booking]) do |f| %>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :time, as: :time, html5: true %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
+  <% if current_user != @user %>
+    <div class="container">
+      <h5 style="color:black">Send Booking Request</h5>
+      <%= simple_form_for ([@user, @booking]) do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :time, as: :string, placeholder: 'Suggest a time' %>
+        <p><%= f.button :submit, class: 'btn btn-primary' %></p>
+      <% end %>
+    <% else %>
+    <% end %>
   </div>
-<%# </div> %>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
