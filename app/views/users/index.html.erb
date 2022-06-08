@@ -1,19 +1,7 @@
-<%# <div class="background-image"> %>
-<div class="index-box">
-  <div class="container-search">
-    <h1>Search by language/location</h1>
-    <%= form_tag users_path, method: :get, class:"d-flex" do %>
-      <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Find your teacher"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<div class="background-image">
 
-<div class="teachers-heading mt-4">
+<div class="teachers-heading mt-0">
+  <br>
   <center><h1>Available Teachers</h1></center>
 </div>
 <div class="container card-map">
@@ -34,7 +22,7 @@
     <% end %>
   </div>
 
-  <div class="container" style=" position: sticky; top: 0; width: 100%; height: 670px;"
+  <div class="container" style=" position: sticky; top: 0; width: 100%; height: 660px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

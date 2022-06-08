@@ -5,6 +5,15 @@
   align-items: center;
 }
 
+.card:hover {
+  opacity: 0.7;
+}
+
+.card img {
+  height: 250px;
+  object-fit: content;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -25,7 +34,7 @@
 }
 
 
- .card-show {
+.card-show {
   display: flex;
   flex-direction: row;
   align-content: space-between;
