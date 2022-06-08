@@ -1,7 +1,7 @@
 <div class="index-box">
       <div class="container-search">
-          <h1>Search by language/location</h1>
-          <%= form_tag users_path, method: :get, class:"d-flex" do %>
+          <h1>Search by your location</h1>
+          <%= form_tag users_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
                       params[:query],
                       class: "form-control",
@@ -10,6 +10,8 @@
             <%= submit_tag "Search", class: "btn btn-primary" %>
           <% end %>
       </div>
+
+
         <div class="teachers-heading mt-4">
           <center><h1>Available Teachers</h1></center>
         </div>
