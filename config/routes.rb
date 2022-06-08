@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   get '/my_bookings', to: "bookings#my_bookings"
   get '/confirm/:id', to: "bookings#confirm"
   root to: "pages#home"
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
