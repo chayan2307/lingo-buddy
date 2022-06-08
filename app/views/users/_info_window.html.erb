@@ -1,2 +1,3 @@
-<h2><%= user.first_name %></h2>
-<p><%= user.location %></p>
+<h5 style="color:black">🗣️ <%= link_to "#{user.first_name.capitalize} #{user.last_name.capitalize}", user_path(user)%></h5>
+<p>Location: <%= user.location %></p>
+<p>Languages: <%= user.languages %></p>
