@@ -24,6 +24,7 @@
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <%= image_tag "user-icon.png" %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/my_bookings">My Bookings</a>
+                <a class="dropdown-item" <%= href="/users/'#{current_user.id}'/edit"%>>Become a Lingo Buddy!</a>
                 <a class="dropdown-item" href="/users/sign_out">Sign Out</a>
               </div>
             </li>
