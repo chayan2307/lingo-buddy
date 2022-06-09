@@ -7,7 +7,7 @@
     <%= render "messages/message", message: message %>
     <% end %>
   </div>
-      <%= simple_form_for [@chatroom, @message],
+      <%= simple_form_for [@booking, @chatroom, @message],
 
       html: {data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f| %>
     <div class="container d-flex justify-content-center">
