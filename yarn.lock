@@ -949,6 +949,11 @@ lodash.debounce@^4.0.6:
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
+
 lowercase-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-2.0.0.tgz#2603e78b7b4b0006cbca2fbcc8a3202558ac9479"
@@ -1333,6 +1338,18 @@ spdx-license-ids@^3.0.0:
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.11.tgz#50c0d8c40a14ec1bf449bae69a0ea4685a9d9f95"
   integrity sha512-Ctl2BrFiM0X3MANYgj3CkygxhRmr9mi6xhejbdO960nF6EDJApTYpn0BQnDKlnNBULKiCN1n3w9EBkHK8ZWg+g==
+
+stimulus-read-more@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-read-more/-/stimulus-read-more-3.0.0.tgz#fc39394b58ee6981ee5e3236972939a0043cfe36"
+  integrity sha512-g2Xxyn6MlxpljhBNsq1aGRnSs/Mc+DtFmJ2hJ2HNuycG8PYfuLojKesfX8Qj+LgYrVu0WwkGC0KAbwgfzmc0PA==
+
+stimulus-scroll-progress@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-scroll-progress/-/stimulus-scroll-progress-4.0.0.tgz#108b89169f3f24f19637a9733ab096e265e352e0"
+  integrity sha512-GRlPCYaHFVK0KQ5UYpxB18Dh/iQhiyDbZ5mLGNZobPNiXTtPucH4JVLu31LBqZ0aa3rwBDzDCqFmDhYZBf/Zaw==
+  dependencies:
+    lodash.throttle "^4.1.1"
 
 strip-final-newline@^2.0.0:
   version "2.0.0"

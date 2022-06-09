@@ -1,4 +1,4 @@
-<div class="background-image-show">
+<div class="background-image-show" style="background-color:rgb(236, 197, 177)">
 
 <div class="container card-show mt-0 mb-0">
   <% if @user.photo.attached? %>
@@ -31,14 +31,13 @@
 </div>
 </div>
   <div class="container">
-    <hr>
     <center><h3><b>More About <%= "#{@user.first_name}"%></b></h3></center>
     <p><%= "#{@user.bio}" %></p>
     <hr>
   </div>
 </div>
 <center><h3><b>Reviews</b></h3></center>
-  <div class="container" style="width: 600px">
+  <div class="container"  style="width: 600px">
     <% if @user.reviews.blank? %>
       <center><h3><strong>Be the first to leave a review for <%= @user.first_name %></strong></h3></center>
       <div class="container">

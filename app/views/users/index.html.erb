@@ -1,11 +1,12 @@
 <div class="index-background" style="background-color:rgb(236, 197, 177)">
+<div data-controller="scroll-progress" class="h-2 bg-indigo-400 fixed top-0"></div>
 
 <div class="teachers-heading mt-0">
   <br>
   <center><h1 style="color:black">Available Lingo Buddies</h1></center>
 </div>
 <div class="container card-map">
-  <div class="container card-grid mt-3 pb-0">
+  <div class="container card-grid mt-3 pb-0 pr-5">
     <% @users.shuffle.each do |user| %>
       <% if user.teacher %>
         <div class="card pb-0" style="width: 16rem; background-color:white">
