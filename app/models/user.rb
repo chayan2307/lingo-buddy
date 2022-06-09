@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bookings
+  has_many :reviews, dependent: :destroy
   # has_many :languages, through: :user_language
 
   geocoded_by :location

@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   resources :users do
     resources :bookings, only: [:new, :create]
   end
+  resources :users, only: [ :index, :show ] do
+    resources :reviews, only: :create
+  end
+
   resources :languages
+
   resources :bookings
   get '/my_bookings', to: "bookings#my_bookings"
   get '/confirm/:id', to: "bookings#confirm"

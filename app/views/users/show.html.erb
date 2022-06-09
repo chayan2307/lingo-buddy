@@ -40,3 +40,29 @@
 <br>
 <br>
 <br>
+<br>
+    <div class="container card-show mt-0 mb-0">
+      <div class="container">
+        <h1><%= pluralize @user.reviews.size, "review" %></h1>
+        <h4 style="color:black"><%= "Name: #{@user.first_name}" %></h4>
+        <h4 style="color:black"><%= "Location: #{@user.location} "%></h4>
+          <div>
+            <% if @user.reviews.blank? %>
+              <strong>Be the first to leave a review for <%= @user.first_name %></strong>
+            <% else %>
+              <% @user.reviews.each do |review| %>
+                  <b><%= "Comments: #{review.content} "%></b>
+                  <b><%= "Ratings: #{review.rating} "%></b>
+              <% end %>
+            <% end %>
+          </div>
+      </div>
+        <div class="container" style="width: 600px">
+          <%= simple_form_for([@user, @review]) do |f| %>
+            <%= f.input :content %>
+            <%= f.input :rating %>
+            <%= f.button :submit, class: "btn btn-primary"  %>
+            <%= link_to "Back to all teachers", users_path, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+

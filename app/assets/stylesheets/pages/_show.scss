@@ -2,7 +2,12 @@
   background-color: bisque;
 }
 
-.container-bio {
-  padding: 24px;
+
+.review-box {
   margin: 24px;
+  padding:16px;
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
