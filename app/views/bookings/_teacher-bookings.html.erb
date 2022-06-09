@@ -10,6 +10,17 @@
             <h5> <%= "#{booking.start_date} at #{booking.time}" %></h5>
             <% if booking.confirmed? %>
               <h5 class="card-title"><em>Status</em>: Confirmed ✅ </h5>
+              <% if booking.chatrooms.first.nil? %>
+              <%= simple_form_for [booking, chatroom] do |f| %>
+            <div class="body d-flex justify-content-between m-3 ">
+              <%= f.submit "Start a chat with your Buddy!", class: "btn btn-primary mb-3" %>
+            </div>
+              <% end %>
+              <% else %>
+            <div class="body d-flex justify-content-between m-3 ">
+              <%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first) %>
+            </div>
+              <% end %>
             <% else %>
               <h5 class="card-title"><em>Status</em>: Unconfirmed</h5>
             <% end %>

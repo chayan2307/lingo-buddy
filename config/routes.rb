@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   resources :languages
 
   resources :bookings do
-    post 'chatrooms', to: 'chatroom#create', as: :create_chat
-    resources :chatrooms, only: [:show] do
+    resources :chatrooms, only: [:show, :create] do
       resources :messages, only: :create
     end
   end
