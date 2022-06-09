@@ -14,8 +14,6 @@ Review.destroy_all
 location = ['91 Green Lane, London, England', '14 The Avenue, London, England', '73 The Drive, London, England', '95 George Street, London, England', '832 Alexander Road, London, England', '2 Manchester Road, London, England', '706 Springfield Road, London, England', '3 School Lane, London, England', '411 Highfield Road, London, England', '662 West Street, London, England', '1 Mill Road, London, England' ]
 bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ullamcorper turpis. In pretium magna libero, volutpat lacinia risus scelerisque et. Maecenas interdum semper venenatis. Suspendisse id leo fringilla, pharetra sapien eu, gravida velit. Integer neque turpis, vehicula a convallis a, dignissim at ex. Nulla nec bibendum enim. Donec sagittis sodales ante, id luctus turpis. Nullam sed dictum nisi. In hac habitasse platea dictumst. Sed lorem lorem, pretium rhoncus nisl ut, ullamcorper tempus ligula. Vestibulum faucibus ex at bibendum rhoncus. In hac habitasse platea dictumst. Sed eleifend orci ipsum, nec facilisis mi condimentum vel. In eu ligula eleifend, scelerisque ex."
 languages = ['Spanish', 'French', 'Italian', 'German', 'Korean', 'Japanese', 'Russian', 'Mandarin', 'Hindi', 'Portuguese', 'Bengali']
-ratings = [1..5]
-users = [1..24]
 
 puts 'Creating seeds..'
 
@@ -63,8 +61,8 @@ User.create(bio: bio, languages: languages.sample, location: location.sample, em
 
 # REVIEW SEEDS BELOW
 
-40.times do
-  Review.create!(content: bio, rating: rand(1..5), user_id: rand(1..24))
+60.times do
+  Review.create!(content: bio, rating: rand(3..5), user_id: rand(1..24))
 end
 
 puts "Finished!"
