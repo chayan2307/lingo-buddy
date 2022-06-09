@@ -1,6 +1,7 @@
 require "faker"
 
 User.destroy_all
+Review.destroy_all
 
 # location = ['40 New Road London','338 Manor Road London', '12 Manor Road London', '4 Church Street
 #   London', '335 Church Road London', '45 West Street London', '20 Victoria Street London', '24 The Green London',
@@ -10,11 +11,13 @@ User.destroy_all
 #   '5 Stable St, London', '4 Derry St, London', '22 Kingly St, Carnaby, London', '399 Edgware Rd, London',
 #   '136 Hermitage Rd Harringay London']
 
-location = ['91 Green Lane, London', '14 The Avenue, London', '73 The Drive, London', '95 George Street, London', '832 Alexander Road, London', '2 Manchester Road, London', '706 Springfield Road, London', '3 School Lane, London', '411 Highfield Road, London', '662 West Street, London', '1 Mill Road, London' ]
+location = ['91 Green Lane, London, England', '14 The Avenue, London, England', '73 The Drive, London, England', '95 George Street, London, England', '832 Alexander Road, London, England', '2 Manchester Road, London, England', '706 Springfield Road, London, England', '3 School Lane, London, England', '411 Highfield Road, London, England', '662 West Street, London, England', '1 Mill Road, London, England' ]
 bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ullamcorper turpis. In pretium magna libero, volutpat lacinia risus scelerisque et. Maecenas interdum semper venenatis. Suspendisse id leo fringilla, pharetra sapien eu, gravida velit. Integer neque turpis, vehicula a convallis a, dignissim at ex. Nulla nec bibendum enim. Donec sagittis sodales ante, id luctus turpis. Nullam sed dictum nisi. In hac habitasse platea dictumst. Sed lorem lorem, pretium rhoncus nisl ut, ullamcorper tempus ligula. Vestibulum faucibus ex at bibendum rhoncus. In hac habitasse platea dictumst. Sed eleifend orci ipsum, nec facilisis mi condimentum vel. In eu ligula eleifend, scelerisque ex."
 languages = ['Spanish', 'French', 'Italian', 'German', 'Korean', 'Japanese', 'Russian', 'Mandarin', 'Hindi', 'Portuguese', 'Bengali']
+ratings = [1..5]
+users = [1..24]
 
-puts 'Creating users..'
+puts 'Creating seeds..'
 
 # Language SEEDS BELOW
 
@@ -57,5 +60,11 @@ User.create(bio: bio, languages: languages.sample, location: location.sample, em
 User.create(bio: bio, languages: languages.sample, location: location.sample, email: Faker::Internet.email, rate: 8, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://burst.shopifycdn.com/photos/stylish-man-in-bow-tie.jpg?width=500&format=pjpg&exif=1&iptc=1")
 User.create(bio: bio, languages: languages.sample, location: location.sample, email: Faker::Internet.email, rate: 12, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/smiling-man-outdoors-in-the-city-picture-id1179420343?k=20&m=1179420343&s=612x612&w=0&h=G2UGMVSzAXGAQs3pFZpvWlHNRAzwPIWIVtSOxZHsEuc=")
 User.create(bio: bio, languages: languages.sample, location: location.sample, email: Faker::Internet.email, rate: 10, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://cdn.shopify.com/s/files/1/1944/0163/files/portrait-of-man-casual-hairstyle.jpg?v=1588112735")
+
+# REVIEW SEEDS BELOW
+
+40.times do
+  Review.create!(content: bio, rating: rand(1..5), user_id: rand(1..24))
+end
 
 puts "Finished!"
