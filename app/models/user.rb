@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :reviews, dependent: :destroy
+  has_one_attached :photo
   # has_many :languages, through: :user_language
 
   geocoded_by :location
@@ -16,4 +17,5 @@ class User < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
 end

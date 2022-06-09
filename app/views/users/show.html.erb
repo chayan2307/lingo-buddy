@@ -1,7 +1,11 @@
 <div class="background-image-show">
 
 <div class="container card-show mt-0 mb-0">
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, class: "card-img-top-show mt-5 mb-5", crop: :fill %>
+  <% else %>
   <img src="<%= @user.photo_url %>" class="card-img-top-show mt-5 mb-5" alt="Profile Picture">
+  <% end %>
   <div class="container mb-5 mt-5">
     <div class="cards" style="width: 32rem;">
       <div class="card-body">
