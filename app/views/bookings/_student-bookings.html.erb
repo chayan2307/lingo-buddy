@@ -18,8 +18,10 @@
               </div>
                 <% end %>
                 <% else %>
-                <%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first)  %>
+              <div class="body d-flex justify-content-between m-3 ">
+                <%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn btn-primary mb-3"  %>
                 <% end %>
+              </div>
               <% else %>
                 <h5 class="card-title"><em>Status</em>: Unconfirmed ❌</h5>
               <% end %>

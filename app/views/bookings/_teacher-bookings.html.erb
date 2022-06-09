@@ -18,7 +18,7 @@
               <% end %>
               <% else %>
             <div class="body d-flex justify-content-between m-3 ">
-              <%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first) %>
+              <%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn btn-primary mb-3" %>
             </div>
               <% end %>
             <% else %>
@@ -39,7 +39,6 @@
             <% end %>
             <center><%= link_to "Accept this booking", "/confirm/#{booking.id}" , class: "btn btn-success"%></center>
             <center><%= link_to "Decline this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn btn-danger mt-3"%></center>
-
           </div>
         </div>
         <% end %>
