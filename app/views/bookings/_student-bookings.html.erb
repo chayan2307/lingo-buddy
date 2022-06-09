@@ -9,8 +9,12 @@
               <h5><em>Language</em>: <%= booking.user_teacher[:languages] %></h5>
               <h5 class="card-title"><em>Date & Time</em>: <%="#{booking.start_date} at #{booking.time}" %></h5>
               <h5 class="card-title"><em>Rate</em>: £<%= "#{booking.user_teacher[:rate]}" %>/hour</h5>
-              <% if booking.confirmed? %>
+              <% if booking.confirmed? && booking.chatrooms.first.nil?%>
                 <h5 class="card-title"><em>Status</em>: Confirmed  ✅</h5>
+                <%= simple_form_for [booking, chatroom] do |f| %>
+                <%= f.input :name %>
+                <p><%= f.button :submit, class: 'btn btn-primary' %></p>
+              <% end %>
               <% else %>
                 <h5 class="card-title"><em>Status</em>: Unconfirmed ❌</h5>
               <% end %>

@@ -1,8 +1,8 @@
 <div class="container">
   <% if current_user.teacher? %>
-    <%= render 'teacher-bookings', my_bookings: @teacher_bookings %>
+    <%= render 'teacher-bookings', my_bookings: @teacher_bookings, chatroom: Chatroom.new %>
   <% else %>
-    <%= render 'student-bookings', my_bookings: @student_bookings %>
+    <%= render 'student-bookings',  my_bookings: @student_bookings, chatroom: Chatroom.new %>
   <% end %>
   <br>
   <br>

@@ -35,6 +35,11 @@ class BookingsController < ApplicationController
   def my_bookings
     @student_bookings = Booking.where(user_student_id: current_user.id)
     @teacher_bookings = Booking.where(user_teacher_id: current_user.id)
+    # if @booking.chatroom.nil?
+      @chatroom = Chatroom.new
+    # else
+    #   @chatroom = @bookings.chatrooms.first
+    # end
   end
 
   private

@@ -1,5 +1,9 @@
 require "faker"
 
+Language.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
+Booking.destroy_all
 User.destroy_all
 
 # location = ['40 New Road London','338 Manor Road London', '12 Manor Road London', '4 Church Street
