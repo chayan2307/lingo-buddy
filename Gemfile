@@ -6,6 +6,7 @@ gem "devise"
 gem "pundit"
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem "geocoder"
+gem "omniauth-facebook"
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -84,3 +85,4 @@ end
 
 gem "pg_search"
 gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"

@@ -1,7 +1,11 @@
 <div class="background-image-show">
 
 <div class="container card-show mt-0 mb-0">
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, class: "card-img-top-show mt-5 mb-5", crop: :fill %>
+  <% else %>
   <img src="<%= @user.photo_url %>" class="card-img-top-show mt-5 mb-5" alt="Profile Picture">
+  <% end %>
   <div class="container mb-5 mt-5">
     <div class="cards" style="width: 32rem;">
       <div class="card-body">
@@ -26,43 +30,57 @@
   </div>
 </div>
 </div>
-  <hr>
-   <div class="container">
-    <center><h4><b>More About <%= "#{@user.first_name}"%></b></h4></center>
+  <div class="container">
+    <hr>
+    <center><h3><b>More About <%= "#{@user.first_name}"%></b></h3></center>
     <p><%= "#{@user.bio}" %></p>
+    <hr>
   </div>
-
-  <div class="re">
-    <center><h4><b>More About <%= "#{@user.reviews}"%></b></h4></center>
-    <p><%= "#{@user.bio}" %></p>
-  </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <div class="container card-show mt-0 mb-0">
+</div>
+<center><h3><b>Reviews</b></h3></center>
+  <div class="container" style="width: 600px">
+    <% if @user.reviews.blank? %>
+      <center><h3><strong>Be the first to leave a review for <%= @user.first_name %></strong></h3></center>
       <div class="container">
-        <h1><%= pluralize @user.reviews.size, "review" %></h1>
-        <h4 style="color:black"><%= "Name: #{@user.first_name}" %></h4>
-        <h4 style="color:black"><%= "Location: #{@user.location} "%></h4>
-          <div>
-            <% if @user.reviews.blank? %>
-              <strong>Be the first to leave a review for <%= @user.first_name %></strong>
-            <% else %>
-              <% @user.reviews.each do |review| %>
-                  <b><%= "Comments: #{review.content} "%></b>
-                  <b><%= "Ratings: #{review.rating} "%></b>
-              <% end %>
-            <% end %>
-          </div>
-      </div>
-        <div class="container" style="width: 600px">
-          <%= simple_form_for([@user, @review]) do |f| %>
-            <%= f.input :content %>
-            <%= f.input :rating %>
-            <%= f.button :submit, class: "btn btn-primary"  %>
-            <%= link_to "Back to all teachers", users_path, class: "btn btn-primary" %>
-          <% end %>
-        </div>
-
+      <%= simple_form_for([@user, @review]) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :content, :label => 'Review', prompt: "Enter your review" %>
+        <%= f.input :rating, :collection => ["1", "2", "3", "4", "5"],
+        :input_html => {:class => 'selectpicker'}, :label => 'Rating', prompt: "Select Rating out of 5" %>
+        <%= f.button :submit, class: "btn btn-primary"  %>
+        <%= link_to "Back to all teachers", users_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <% else %>
+  </div>
+  <div class="container">
+      <% @user.reviews.each do |review| %>
+        <p><b><%= "Review from #{current_user.first_name} #{current_user.last_name}"%></p></b>
+        <% if review.rating == 1  %>
+          <span class="fa fa-star checked"></span><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+        <% elsif review.rating == 2  %>
+          <span class="fa fa-star checked"></span><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+        <% elsif review.rating == 3  %>
+          <span class="fa fa-star checked"></span><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+        <% elsif review.rating == 4 %>
+          <span class="fa fa-star checked"></span><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+        <% elsif review.rating == 5 %>
+          <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+        <% else %>
+        <% end %>
+        <p><%= "#{review.content}"%></p>
+        <hr>
+      <% end %>
+    </div>
+    <div class="container">
+      <center><h3><strong>Leave a review for <%= @user.first_name %></strong></h3></center>
+      <%= simple_form_for([@user, @review]) do |f| %>
+        <%= f.input :content, :label => 'Review', prompt: "Enter your review" %>
+        <%= f.input :rating, :collection => ["1", "2", "3", "4", "5"],
+        :input_html => {:class => 'selectpicker'}, :label => 'Rating', prompt: "Select Rating out of 5" %>
+        <%= f.button :submit, class: "btn-primary"  %>
+       <center> <%= link_to "Back to all teachers", users_path, class: "btn-lingo-buddy-green" %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
