@@ -4,7 +4,7 @@
       <div class="cards">
         <% my_bookings.each do |booking| %>
           <div class="card">
-            <div class="card-body">
+            <div class="card-body" >
               <h3>Upcoming Booking with <%= booking.user_teacher[:first_name] %> <%= booking.user_teacher[:last_name] %></h3>
               <h5><em>Language</em>: <%= booking.user_teacher[:languages] %></h5>
               <h5 class="card-title"><em>Date & Time</em>: <%="#{booking.start_date} at #{booking.time}" %></h5>
@@ -14,7 +14,10 @@
               <% else %>
                 <h5 class="card-title"><em>Status</em>: Unconfirmed ❌</h5>
               <% end %>
-              <center><%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn btn-danger"%></center>
+              <div class="body d-flex justify-content-between m-3 ">
+                <div class="link1 p-4"><center><%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn btn-danger"%></center></div>
+                <div class="link2 p-4"><a class="btn btn-success" href="/chatrooms/65">Start a chat with your Buddy!</a></div>
+              </div>
             </div>
           </div>
         <% end %>
