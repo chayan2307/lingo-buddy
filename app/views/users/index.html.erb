@@ -9,7 +9,11 @@
     <% @users.shuffle.each do |user| %>
       <% if user.teacher %>
         <div class="card mb-3" style="width: 16rem; background-color:rgb(217, 208, 197)">
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key, class: "user-img", crop: :fill %>
+          <% else %>
           <img src="<%= user.photo_url %>" class="user-img" alt="Profile Picture">
+          <% end %>
           <h5 style="color:black" class="card-title mt-2"><%= link_to "#{user.first_name.capitalize} #{user.last_name.capitalize}", user_path(user)%></h5>
           <div class="card-body">
             <center><p><b>Languages: </b><%= "#{user.languages}" %></p>

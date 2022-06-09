@@ -5,7 +5,8 @@
     <%= f.input :languages %>
     <%= f.input :location %>
     <%= f.input :rate %>
-    <%= f.input :photo_url %>
+    <%= f.input :photo, as: :file %>
+    <%# <%= f.input :photo_url %>
     <%# <%= f.association :user, label_method: :first_name %>
     <%= f.submit "Update", class: "btn btn-primary" %>
   <% end %>
