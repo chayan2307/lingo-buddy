@@ -1,14 +1,20 @@
 <br>
 <div class="container">
-  <h3><%= "#{@user.first_name}, Become a Lingo Buddy!"%></h3>
-  <%= simple_form_for [@user] do |f| %>
-    <%= f.input :languages %>
-    <%= f.input :bio %>
-    <%= f.input :location %>
-    <%= f.input :rate %>
-    <%= f.input :photo, as: :file %>
-    <%# <%= f.input :photo_url %>
-    <%# <%= f.association :user, label_method: :first_name %>
-    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% if current_user.teacher? == false %>
+    <h3><%= "#{@user.first_name}, Become a Lingo Buddy! ⭐️  "%></h3>
+  <% else %>
+    <h3><%= "#{@user.first_name}, Update Profile Details ✍️  "%></h3>
   <% end %>
+    <div class="container">
+      <%= simple_form_for [@user] do |f| %>
+        <%= f.input :languages %>
+        <%= f.input :bio %>
+        <%= f.input :location %>
+        <%= f.input :rate %>
+        <%= f.input :photo, as: :file %>
+        <%# <%= f.input :photo_url %>
+        <%# <%= f.association :user, label_method: :first_name %>
+        <%= f.submit "Update", class: "btn btn-primary" %>
+      <% end %>
+    </div>
 </div>
