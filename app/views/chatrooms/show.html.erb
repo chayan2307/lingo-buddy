@@ -10,11 +10,16 @@
       <%= simple_form_for [@chatroom, @message],
 
       html: {data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f| %>
-
-      <%= f.input :content,
+    <div class="container d-flex justify-content-center">
+      <div class="content d-flex m-4">
+        <%= f.input :content,
         label: false,
         placeholder: "Message ##{@chatroom.name}",
-        wrapper_html: {class: "flex-grow-1"} %>
-      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        wrapper_html: {class: "flex-grow-0"} %>
+        </div>
+        <div class="button m-4">
+        <%= f.submit "Send", class: "btn btn-primary" %>
+        </div>
     <% end %>
+    </div>
 </div>
