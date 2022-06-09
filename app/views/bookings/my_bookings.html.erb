@@ -1,9 +1,0 @@
-<div class="container">
-  <% if current_user.teacher? %>
-  <div></div>
-    <%= render 'teacher-bookings', my_bookings: @teacher_bookings %>
-  <% else %>
-    <%= render 'student-bookings', my_bookings: @student_bookings %>
-  <% end %>
-    <%# <a class="btn btn-success" href="/chatrooms/65">Start a chat with your Buddy!</a> %>
-</div>
