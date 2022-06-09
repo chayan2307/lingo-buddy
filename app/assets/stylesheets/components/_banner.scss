@@ -40,7 +40,8 @@
   background-position: center;
   padding-top: 150px;
   padding-bottom: 100px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/assets/images/language-page.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("language-page.jpg");
+  height: 400px;
 }
 
 .lang-banner h1 {
@@ -59,4 +60,12 @@
   opacity: .9;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   width: 500px;
+}
+
+.lang-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 70px;
+  align-items: flex-end;
 }
