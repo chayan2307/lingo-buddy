@@ -13,11 +13,12 @@ Rails.application.routes.draw do
   resources :languages
 
   resources :bookings do
-    resources :chatrooms, only: :show do
+    post 'chatrooms', to: 'chatroom#create', as: :create_chat
+    resources :chatrooms, only: [:show] do
       resources :messages, only: :create
     end
-
   end
+
   get '/my_bookings', to: "bookings#my_bookings"
   get '/confirm/:id', to: "bookings#confirm"
   root to: "pages#home"

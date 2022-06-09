@@ -11,10 +11,7 @@
               <h5 class="card-title"><em>Rate</em>: £<%= "#{booking.user_teacher[:rate]}" %>/hour</h5>
               <% if booking.confirmed? && booking.chatrooms.first.nil?%>
                 <h5 class="card-title"><em>Status</em>: Confirmed  ✅</h5>
-                <%= simple_form_for [booking, chatroom] do |f| %>
-                <%= f.input :name %>
-                <p><%= f.button :submit, class: 'btn btn-primary' %></p>
-              <% end %>
+              <%= link_to "Chat!" , booking_create_chat_path(booking, chatroom), method: :post %>
               <% else %>
                 <h5 class="card-title"><em>Status</em>: Unconfirmed ❌</h5>
               <% end %>
