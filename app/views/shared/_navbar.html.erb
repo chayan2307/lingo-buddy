@@ -7,12 +7,12 @@
     <div class="index-box">
       <%= form_tag users_path, method: :get, class:"d-flex" do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search by language or location" %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= submit_tag "Search", class: "btn-lingo-buddy" %>
       <% end %>
     </div>
 
      <div class="dropdown">
-      <button class="btn btn-lingo-buddy">Languages</button>
+      <button class="btn-lingo-buddy me-3">Languages</button>
       <div class="dropdown-content">
         <% @languages.each do |lang| %>
           <%= link_to lang.language_name, language_path(lang, language_name: lang.language_name), class: "dropdown-item" %>
@@ -42,8 +42,8 @@
               </div>
             </li>
             <% else %>
-              <%= link_to "Log In", new_user_session_path, class:"btn btn-danger me-3 log-in" %>
-              <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-light me-5 sign-up" %>
+              <%= link_to "Log In", new_user_session_path, class:"btn-lingo-buddy-green me-3 log-in" %>
+              <%= link_to "Sign Up", new_user_registration_path, class:"btn-lingo-buddy-white me-5 sign-up" %>
             <% end %>
           </li>
       </ul>

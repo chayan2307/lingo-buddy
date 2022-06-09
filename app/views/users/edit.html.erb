@@ -1,13 +1,14 @@
 <br>
 <div class="container">
   <% if current_user.teacher? == false %>
-    <h3>Become a Lingo Buddy! ⭐️ </h3>
+    <h3><%= "#{@user.first_name}, Become a Lingo Buddy! ⭐️  "%></h3>
   <% else %>
-    <h3>Update Profile Details ✍️ </h3>
+    <h3><%= "#{@user.first_name}, Update Profile Details ✍️  "%></h3>
   <% end %>
     <div class="container">
       <%= simple_form_for [@user] do |f| %>
         <%= f.input :languages %>
+        <%= f.input :bio %>
         <%= f.input :location %>
         <%= f.input :rate %>
         <%= f.input :photo, as: :file %>
