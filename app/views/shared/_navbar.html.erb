@@ -4,20 +4,20 @@
       <h3>Lingo Buddy</h3>
     </a>
 
-    <div class="dropdown">
-      <button class="dropbtn">Languages</button>
-      <div class="dropdown-content">
-        <% @languages.each do |lang| %>
-          <%= link_to lang.language_name, language_path(lang, language_name: lang.language_name), class: "dropdown-item" %>
-        <% end %>
-      </div>
-    </div>
-
     <div class="index-box">
       <%= form_tag users_path, method: :get, class:"d-flex" do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search by language or location" %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
+    </div>
+
+     <div class="dropdown">
+      <button class="btn btn-lingo-buddy">Languages</button>
+      <div class="dropdown-content">
+        <% @languages.each do |lang| %>
+          <%= link_to lang.language_name, language_path(lang, language_name: lang.language_name), class: "dropdown-item" %>
+        <% end %>
+      </div>
     </div>
 
 
