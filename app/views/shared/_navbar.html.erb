@@ -29,9 +29,9 @@
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
            <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <%= image_tag "user-icon.png" %>>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
+            <div class="dropdown">
+              <%= image_tag "user-icon.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-content">
                 <a class="dropdown-item" href="/bookings">My Bookings</a>
                 <% if current_user.teacher? == false %>
                   <a class="dropdown-item" href=<%="users/#{current_user.id}/edit"%>>Become a Lingo Buddy!</a>
@@ -40,7 +40,7 @@
                 <% end %>
                 <a class="dropdown-item" href="/users/sign_out">Sign Out</a>
               </div>
-            </li>
+            </div>
             <% else %>
               <%= link_to "Log In", new_user_session_path, class:"btn-lingo-buddy-green me-3 log-in" %>
               <%= link_to "Sign Up", new_user_registration_path, class:"btn-lingo-buddy-white me-5 sign-up" %>
