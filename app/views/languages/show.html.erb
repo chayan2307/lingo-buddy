@@ -25,15 +25,18 @@
             <p><b>Location: </b><%= "#{user.location}" %></p>
             <p><b>Rate: </b><%= "£#{user.rate}" %>/hour</p>
           </div>
-          <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary mb-2"%>
+          <%# <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary mb-2"%>
         </div>
       <% end %>
     <% end %>
   </div>
-
-  <div class="container" style=" position: sticky; top: 0; width: 100%; height: 660px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<div class="lang-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));">
+  <div class="container d-flex align-items-end flex-column">
+    <h1>Speaking is the fastest way to fluency</h1>
+    <br>
+    <h6>Listen, improve your pronunciation, practice speaking a foreign language with native speakers - no matter where you are.</h6>
+    <br>
+    <br>
   </div>
 </div>

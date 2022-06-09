@@ -4,19 +4,13 @@
       <h3>Lingo Buddy</h3>
     </a>
 
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <strong>Languages</strong>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <% @languages.each do |lang| %>
-              <li><%= link_to lang.language_name, language_path(lang, language_name: lang.language_name), class: "dropdown-item" %></li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
+    <div class="dropdown">
+      <button class="dropbtn">Languages</button>
+      <div class="dropdown-content">
+        <% @languages.each do |lang| %>
+          <%= link_to lang.language_name, language_path(lang, language_name: lang.language_name), class: "dropdown-item" %>
+        <% end %>
+      </div>
     </div>
 
     <div class="index-box">

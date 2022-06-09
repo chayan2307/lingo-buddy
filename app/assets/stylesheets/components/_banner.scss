@@ -34,3 +34,29 @@
   opacity: 0.6;
   color: white;
 }
+
+.lang-banner {
+  background-size: cover;
+  background-position: center;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/assets/images/language-page.jpg");
+}
+
+.lang-banner h1 {
+  margin: 0;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 40px;
+  font-weight: bold;
+  width: 500px;
+  justify-content: center;
+}
+
+.lang-banner h6 {
+  font-size: 20px;
+  color: black;
+  opacity: .9;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
