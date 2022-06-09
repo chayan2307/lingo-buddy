@@ -36,6 +36,7 @@
                 <% if current_user.teacher? == false %>
                   <a class="dropdown-item" href=<%="users/#{current_user.id}/edit"%>>Become a Lingo Buddy!</a>
                 <% else %>
+                  <a class="dropdown-item" href=<%="users/#{current_user.id}/edit"%>>My Profile</a>
                 <% end %>
                 <a class="dropdown-item" href="/users/sign_out">Sign Out</a>
               </div>
