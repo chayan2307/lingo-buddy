@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'translations/index'
-  get 'translations/translate'
   get 'users/index'
 
   devise_for :users
