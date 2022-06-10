@@ -19,14 +19,14 @@
                 <% end %>
                 <% else %>
               <div class="body d-flex justify-content-between m-3 ">
-                <%= link_to "Go to the chat with your Lingo Buddy", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn btn-primary mb-3 center" %>
+                <%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn btn-primary mb-3" %>
                 <% end %>
               </div>
               <% else %>
                 <h5 class="card-title"><em>Status</em>: Unconfirmed ❌</h5>
               <% end %>
               <div class="body d-flex justify-content-between m-3 ">
-                <%# <center><%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn btn-danger"%></center>
+                <center><%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn btn-danger"%></center>
               </div>
             </div>
           </div>
