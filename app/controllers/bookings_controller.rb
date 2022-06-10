@@ -35,12 +35,11 @@ class BookingsController < ApplicationController
   def confirm
     @booking = Booking.find(params[:id])
     @booking.confirmed = true
-    @booking.save
+    @booking.save!
     redirect_to bookings_path
   end
 
   def my_bookings
-
   end
 
   private
