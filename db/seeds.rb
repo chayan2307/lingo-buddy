@@ -15,7 +15,7 @@ Review.destroy_all
 #   '5 Stable St, London', '4 Derry St, London', '22 Kingly St, Carnaby, London', '399 Edgware Rd, London',
 #   '136 Hermitage Rd Harringay London']
 
-location = ['91 Green Lane, London, England', '14 The Avenue, London, England', '73 The Drive, London, England', '95 George Street, London, England', '832 Alexander Road, London, England', '2 Manchester Road, London, England', '706 Springfield Road, London, England', '3 School Lane, London, England', '411 Highfield Road, London, England', '662 West Street, London, England', '1 Mill Road, London, England' ]
+location = ['Green Lanes, Stoke Newington, London, England', 'The Avenue, Brent, London, England', 'The Drive, Brent, London, England', 'George Street, Marylebone, London, England', 'Alexander Road, Archway, London, England', 'Manchester Road, Canary Wharf, London, England', 'Springfield Road, South Hampstead, London, England', 'School Lane, Hampton Wick, London, England', 'Highfield Road, Edmonton, London, England', 'West Street, Covent Garden, London, England', 'Mill Road, Colliers Wood, London, England', 'Tandy Place, Hackney Wick, London', 'Stoneleigh Street, Notting Hill, London', 'Broadway Market, Hackney, London', 'Tudor Place, Hackney, London', 'Millfields Road, Hackney, London' ]
 bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ullamcorper turpis. In pretium magna libero, volutpat lacinia risus scelerisque et. Maecenas interdum semper venenatis. Suspendisse id leo fringilla, pharetra sapien eu, gravida velit. Integer neque turpis, vehicula a convallis a, dignissim at ex. Nulla nec bibendum enim. Donec sagittis sodales ante, id luctus turpis. Nullam sed dictum nisi. In hac habitasse platea dictumst. Sed lorem lorem, pretium rhoncus nisl ut, ullamcorper tempus ligula. Vestibulum faucibus ex at bibendum rhoncus. In hac habitasse platea dictumst. Sed eleifend orci ipsum, nec facilisis mi condimentum vel. In eu ligula eleifend, scelerisque ex."
 languages = ['Spanish', 'French', 'Italian', 'German', 'Korean', 'Japanese', 'Russian', 'Mandarin', 'Hindi', 'Portuguese', 'Bengali']
 
@@ -63,10 +63,28 @@ User.create(bio: bio, languages: languages.sample, location: location.sample, em
 User.create(bio: bio, languages: languages.sample, location: location.sample, email: Faker::Internet.email, rate: 12, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/smiling-man-outdoors-in-the-city-picture-id1179420343?k=20&m=1179420343&s=612x612&w=0&h=G2UGMVSzAXGAQs3pFZpvWlHNRAzwPIWIVtSOxZHsEuc=")
 User.create(bio: bio, languages: languages.sample, location: location.sample, email: Faker::Internet.email, rate: 10, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://cdn.shopify.com/s/files/1/1944/0163/files/portrait-of-man-casual-hairstyle.jpg?v=1588112735")
 
+#TEACHER SEEDS FOR DEMO BELOW
+User.create(bio: bio, languages: "Spanish", location: "Evering Road, Hackney, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://static.onecms.io/wp-content/uploads/sites/20/2014/10/frances-mcdormand-1-435.jpg")
+User.create(bio: bio, languages: "Spanish", location: "Mare Street, Hackney, London", email: Faker::Internet.email, rate: 8, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2020-7/Female_Portrait_1296x728-header.jpg?w=1155&h=1528")
+User.create(bio: bio, languages: "Spanish", location: "Well Street, Hackney, London", email: Faker::Internet.email, rate: 6, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://img.freepik.com/free-photo/dreamy-young-woman-sunglasses-looking-front_197531-16739.jpg?w=2000")
+User.create(bio: bio, languages: "Spanish", location: "Navarino Road, Hackney, London", email: Faker::Internet.email, rate: 12, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://static.onecms.io/wp-content/uploads/sites/23/2022/01/14/curly-girl-hair-2000.jpg")
+User.create(bio: bio, languages: "Spanish", location: "Richmond Road, Hackney, London", email: Faker::Internet.email, rate: 9, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/portrait-of-modern-black-woman-in-oxford-street-in-london-uk-picture-id1054835750?b=1&k=20&m=1054835750&s=170667a&w=0&h=SSPmHsCWIl-ESA4JdLoM7xeP0VYV-8rU0ffYtIUPcJ4=")
+
+User.create(bio: bio, languages: "Spanish", location: "Brenthouse Road, Hackney, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "http://d17zbv0kd7tyek.cloudfront.net/wp-content/uploads/2015/06/leonardo-dicaprio-fb.jpg")
+User.create(bio: bio, languages: "Spanish", location: "Retreat Place, Hackney, London", email: Faker::Internet.email, rate: 11, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://us.123rf.com/450wm/dglimages/dglimages1807/dglimages180700174/105059079-front-view-of-a-young-male-adult-looking-and-smiling-at-the-camera-while-he-gets-a-portrait-taken-.jpg?ver=6")
+User.create(bio: bio, languages: "Spanish", location: "Albion Drive, Hackney, London", email: Faker::Internet.email, rate: 7, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://t4.ftcdn.net/jpg/03/03/11/97/360_F_303119721_EabYowCVsPMkCo7UMSGWx4Z2AvNkR7bV.jpg")
+
+#HERO TEACHER SEED FOR DEMO BELOW #33
+User.create(bio: "Hola! My name is Andres and I have been on LingoBuddy for 3 years. I love meeting new people and helping them learn Spanish. I live in East London and my day job is being a web developer. If you would like to meet up send me a booking request and we can chat!", languages: "Spanish", location: "Shore Road, Hackney, London", email: "teacher@email.com", rate: 5, first_name: "Andres", last_name: "Garcia", password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/portrait-of-young-man-in-yellow-tshirt-at-backyard-picture-id1180616266?b=1&k=20&m=1180616266&s=170667a&w=0&h=cMM4OlorRa8ONFxDBQHmAus9H-LkhJ2TDH2px2Hr3M8=")
+
 # REVIEW SEEDS BELOW
 
 60.times do
-  Review.create!(content: bio, rating: rand(3..5), user_id: rand(1..24))
+  Review.create!(content: bio, rating: rand(3..5), user_id: rand(5..32))
+end
+
+4.times do
+  Review.create!(content: bio, rating: 5, user_id: 33)
 end
 
 puts "Finished!"

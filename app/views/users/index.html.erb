@@ -25,18 +25,29 @@
             <% average_rating %>
             <% if average_rating == 1  %>
               <center><span class="fa fa-star checked"><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
+              <br>
+              <br>
             <% elsif average_rating <= 2  %>
               <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
+              <br>
+              <br>
             <% elsif average_rating <= 3  %>
               <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
+              <br>
+              <br>
             <% elsif average_rating <= 4 %>
               <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
+              <br>
+              <br>
             <% elsif average_rating <= 5 %>
               <center><span class="fa fa-star checked"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span></span>
+              <br>
+              <br>
+            <% elsif user.reviews.empty? %>
+              <center><em><h6>Not enough reviews yet</h6></em>
+              <br>
             <% else %>
           <% end %>
-          <br>
-          <br>
             <h6><b>Languages: </b><%= "#{user.languages}" %></h6>
             <h6><b>Location: </b><%= "#{user.location}" %></h6>
             <h6><b>Rate: </b><%= "£#{user.rate}" %>/hour</h6>
