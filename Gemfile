@@ -86,3 +86,5 @@ end
 gem "pg_search"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
+gem 'excon'
+gem 'i18n_data'

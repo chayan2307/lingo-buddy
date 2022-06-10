@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'translations/index'
+  get 'translations/translate'
   get 'users/index'
 
   devise_for :users
@@ -21,4 +23,6 @@ Rails.application.routes.draw do
   get '/my_bookings', to: "bookings#my_bookings"
   get '/confirm/:id', to: "bookings#confirm"
   root to: "pages#home"
+
+  post 'translations/translate', as: :translate
 end
