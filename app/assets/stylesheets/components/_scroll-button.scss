@@ -1,14 +1,13 @@
 .scroll-down {
   height: 50px;
   width: 30px;
-  border: 2px solid rgb(164, 61, 14);
+  border: 2px solid rgb(0, 0, 0);
   position: absolute;
-  left: 50%;
-  bottom: 80px;
+  left: 95%;
+  bottom: 40px;
   border-radius: 50px;
   cursor: pointer;
   z-index: 1;
-  opacity: 0.5;
 }
 
 .scroll-down::before,
