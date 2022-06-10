@@ -24,5 +24,4 @@ Rails.application.routes.draw do
   get '/confirm/:id', to: "bookings#confirm"
   root to: "pages#home"
 
-  post 'translations/translate', as: :translate
 end
