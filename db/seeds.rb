@@ -80,11 +80,11 @@ User.create(bio: "Hola! My name is Andres and I have been on LingoBuddy for 3 ye
 # REVIEW SEEDS BELOW
 
 60.times do
-  Review.create!(content: bio, rating: rand(3..5), user_id: rand(5..32))
+  Review.create!(content: bio, rating: rand(3..5), user_id: User.all.sample.id)
 end
 
-4.times do
-  Review.create!(content: bio, rating: 5, user_id: 33)
-end
+# 4.times do
+#   Review.create!(content: bio, rating: 5, user_id: 33)
+# end
 
 puts "Finished!"
