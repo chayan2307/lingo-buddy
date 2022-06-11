@@ -1,33 +1,23 @@
-<div class="container mt-3">
-  <h2>Log in</h2>
+<div class="box" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-1288712636_468402_zjevz9.jpg);">
+  <%# <div class="container"> %>
+    <div class="row justify-content-center pt-5">
+      <div class="col-12 col-sm-4">
+      <center><h1 style="color:white"><b>Log in</b></h1></center>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-login">
+          <%= f.input :email, required: false, autofocus: true, placeholder: "bob@gmail.com" %>
+          <%= f.input :password, required: false, placeholder: "••••••" %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.button :submit, "Log in", class: "btn-lingo-buddy-green", style:"background-color:rgb(236, 196, 177)" %>
+          <div class="pb-3">
+            <center><%= link_to "Sign up", new_registration_path(resource_name), class: "btn-lingo-buddy-green", style: "width:100%", style:"display: inline" %> <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn-lingo-buddy-green", style: "width:100%", style:"display: inline"%></center>
+          </div>
+        </div>
+        </div>
+        <div class="form-actions">
+      <% end %>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
-    data: {turbo: false}) do |f| %>
-
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "btn btn-primary" %>
-      <%# <%= render "devise/shared/links" %>
-    </div>
-  <% end %>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <%# </div> %>
 </div>

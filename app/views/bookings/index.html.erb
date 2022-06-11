@@ -1,26 +1,7 @@
-<div class="container">
-  <% if current_user.teacher? %>
-    <%= render 'teacher-bookings', my_bookings: @teacher_bookings, chatroom: Chatroom.new %>
-  <% else %>
-    <%= render 'student-bookings',  my_bookings: @student_bookings, chatroom: Chatroom.new %>
-  <% end %>
+<div class="pt-3 mb-0" style="height: 100%; background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-1288712636_468402_zjevz9.jpg);">
+    <% if current_user.teacher? %>
+      <%= render 'teacher-bookings', my_bookings: @teacher_bookings, chatroom: Chatroom.new %>
+    <% else %>
+      <%= render 'student-bookings',  my_bookings: @student_bookings, chatroom: Chatroom.new %>
+    <% end %>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>

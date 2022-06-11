@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+h1 {
+  color: rgb(80, 131, 118)
+}
+
 .background {
   background-color: rgb(223, 221, 221);
 }
@@ -98,6 +102,7 @@ h2  {
   align-content: center;
   justify-content: center;
   align-items: center;
+  font-size:large;
 }
 
 .card-category {
@@ -155,4 +160,8 @@ h2  {
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.box {
+  height:100vh;
 }

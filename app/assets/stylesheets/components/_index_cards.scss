@@ -4,6 +4,7 @@
   align-content: space-between;
   align-items: center;
   color: black;
+  border-radius: 10px;
 
   h5 a {
     color: black;
@@ -14,9 +15,9 @@
   }
 }
 
-// .card:hover {
-//   opacity: 0.9;
-// }
+.card:hover {
+  opacity: 0.7;
+}
 
 .card img {
   width: 250px;
@@ -24,6 +25,7 @@
   object-fit: cover;
   padding: none;
   margin: none;
+  border-radius: 20px;
 }
 
 .cards {
@@ -32,6 +34,7 @@
   align-content: space-between;
   align-items: center;
 }
+
 
 .card-grid {
   display: grid;
