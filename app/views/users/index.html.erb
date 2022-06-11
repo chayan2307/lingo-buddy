@@ -9,7 +9,7 @@
   <div class="container card-grid mt-3 pb-0 pr-5">
     <% @users.shuffle.each do |user| %>
       <% if user.teacher %>
-        <div class="card pb-0" style="width: 16rem; background-color:white; border-radius: 20px">
+        <div class="card pb-0 mb-5" style="width: 16rem; background-color:white; border-radius: 20px">
         <% if user.photo.attached? %>
           <%= cl_image_tag user.photo.key, class: "user-img", crop: :fill %>
           <% else %>
