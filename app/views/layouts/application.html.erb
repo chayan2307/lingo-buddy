@@ -22,7 +22,9 @@
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
         <div><%= yield %></div>
-        <%= render "shared/footer" %>
+        <% unless action_name == "new" || "create" %>
+          <%= render 'shared/footer' %>
+        <% end %>
           <!-- JavaScript Bundle with Popper -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>

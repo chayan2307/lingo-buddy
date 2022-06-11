@@ -1,20 +1,25 @@
-<br>
-<div class="container">
-  <% if current_user.teacher? == false %>
-    <h3><%= "#{@user.first_name}, Become a Lingo Buddy! ⭐️  "%></h3>
-  <% else %>
-    <h3><%= "#{@user.first_name}, Update Profile Details ✍️  "%></h3>
-  <% end %>
-    <div class="container">
-      <%= simple_form_for [@user] do |f| %>
-        <%= f.input :languages %>
-        <%= f.input :bio %>
-        <%= f.input :location %>
-        <%= f.input :rate %>
-        <%= f.input :photo, as: :file %>
-        <%# <%= f.input :photo_url %>
-        <%# <%= f.association :user, label_method: :first_name %>
-        <%= f.submit "Update", class: "btn btn-primary" %>
+
+<div class="box" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-1288712636_468402_zjevz9.jpg);">
+  <%# <div class="container"> %>
+    <div class="row justify-content-center pt-5">
+      <div class="col-12 col-sm-4 pt-3" style="background-color:white; border-radius:30px;">
+      <% if current_user.teacher? == false %>
+        <center><h3 style="color:black"><b><%= "#{@user.first_name}, Become a Lingo Buddy! ⭐️  "%></b></h3></center>
+      <% else %>
+        <center><h3><%= "#{@user.first_name}, Update Profile Details ✍️  "%></h3></center>
       <% end %>
+      <div class="container">
+        <%= simple_form_for [@user] do |f| %>
+          <%= f.input :languages %>
+          <%= f.input :bio %>
+          <%= f.input :location %>
+          <%= f.input :rate %>
+          <%= f.input :photo, as: :file %>
+          <%# <%= f.input :photo_url %>
+          <%# <%= f.association :user, label_method: :first_name %>
+          <%= f.button :submit, "Enter Details", class: "btn-lingo-buddy-green", style:"color:white; background-color:rgb(127, 173, 160); width:100%; opacity:1;" %>
+        <% end %>
+      </div>
     </div>
+  <%# </div> %>
 </div>
