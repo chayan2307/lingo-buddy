@@ -1,35 +1,41 @@
-  <div class="container mt-3">
-    <h2>Sign up</h2>
+<div class="box" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-1288712636_468402_zjevz9.jpg);">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <br>
+      <center><h1 style="color:white"><b>Sign Up</b></h1></center>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
-      data: {turbo: false}) do |f| %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+        data: {turbo: false}) do |f| %>
 
-      <div class="form-inputs">
+        <div class="form-inputs">
 
-        <%= f.input :first_name,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "first-name" }%>
-        <%= f.input :last_name,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "last-name" }%>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-      </div>
+          <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "first-name" }%>
+          <%= f.input :last_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "last-name" }%>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn btn-outline-primary" %>
-        <%= render "devise/shared/links" %>
+        <%= f.button :submit, "Sign up", class: "btn-lingo-buddy-green", style:"background-color:rgb(236, 196, 177)" %>
+        <%= link_to "Log in", new_session_path(resource_name), class: "btn-lingo-buddy-green"%><br />
       </div>
+      <br>
     <% end %>
+    </div>
   </div>
+</div>
