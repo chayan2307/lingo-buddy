@@ -23,7 +23,7 @@
       <%= simple_form_for ([@user, @booking]) do |f| %>
         <%= f.input :start_time, as: :datetime, html5: true %>
         <%= f.input :end_time, as: :datetime, html5: true %>
-        <%= f.input :name, as: :string, html5: true %>
+        <%# <%= f.input :name, as: :string, html5: true %>
         <%# <%= f.input :time, as: :string, placeholder: 'Suggest a time' %>
         <%= f.button :submit, "Send Booking Request", class: "btn-lingo-buddy-white", style:"color:white; background-color:rgb(127, 173, 160)"%>
       <% end %>
@@ -33,15 +33,15 @@
 </div>
 </div>
   <div class="container">
-    <center><h3><b>More About <%= "#{@user.first_name}"%></b></h3></center>
+    <center><h3 style="color:black"><b>More About <%= "#{@user.first_name}"%></b></h3></center>
     <center><p style="color:black"><%= "#{@user.bio}" %></p></center>
     <hr>
   </div>
 </div>
-<center><h3><b>Reviews</b></h3></center>
-  <div class="container"  style="width: 600px">
+<center><h3 style="color:black"><b>Reviews</b></h3></center>
+  <div class="container"  style="width: 600px; color:black">
     <% if @user.reviews.blank? %>
-      <center><h3><strong>Be the first to leave a review for <%= @user.first_name %></strong></h3></center>
+      <center><h3 style="color:black"><strong>Be the first to leave a review for <%= @user.first_name %></strong></h3></center>
       <div class="container">
       <%= simple_form_for([@user, @review]) do |f| %>
         <%= f.error_notification %>
@@ -74,9 +74,9 @@
       <% end %>
     </div>
     <div class="container">
-      <center><h3><strong>Leave a review for <%= @user.first_name %></strong></h3></center>
+      <center><h3 style="color:black"><strong>Leave a review for <%= @user.first_name %></strong></h3></center>
       <%= simple_form_for([@user, @review]) do |f| %>
-        <%= f.input :content, :label => 'Review', prompt: "Enter your review" %>
+        <%= f.input :content, :label => 'Review', prompt: "Enter your review",  placeholder: "Enter your review" %>
         <%= f.input :rating, :collection => ["1", "2", "3", "4", "5"],
         :input_html => {:class => 'selectpicker'}, :label => 'Rating', prompt: "Select Rating out of 5" %>
         <%= f.button :submit, "Add your review", class: "btn-lingo-buddy-white", style:"color:white; background-color:rgb(127, 173, 160)"%>

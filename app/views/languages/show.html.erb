@@ -24,13 +24,13 @@
 </div>
 
 
-<div class="teachers-heading mt-0" id="sec-2">
+<center><div class="teachers-heading mt-0" id="sec-2">
   <br>
   <center><h1 style="color:black">Available Teachers</h1></center>
 </div>
 
 <div class="container card-map">
-  <div class="container card-grid mb-2 mt-3">
+  <div class="container card-grid mb-2 mt-3 pr-0">
     <% @filtered_users.shuffle.each do |user| %>
       <% if user.teacher %>
         <div class="card" style="width: 16rem; border-radius:30px;">
