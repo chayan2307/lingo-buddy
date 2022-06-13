@@ -16,7 +16,7 @@ User.destroy_all
 #   '136 Hermitage Rd Harringay London']
 
 location = ['Green Lanes, Stoke Newington, London, England', 'The Avenue, Brent, London, England', 'The Drive, Brent, London, England', 'George Street, Marylebone, London, England', 'Alexander Road, Archway, London, England', 'Manchester Road, Canary Wharf, London, England', 'Springfield Road, South Hampstead, London, England', 'School Lane, Hampton Wick, London, England', 'Highfield Road, Edmonton, London, England', 'West Street, Covent Garden, London, England', 'Mill Road, Colliers Wood, London, England', 'Tandy Place, Hackney Wick, London', 'Stoneleigh Street, Notting Hill, London', 'Broadway Market, Hackney, London', 'Tudor Place, Hackney, London', 'Millfields Road, Hackney, London' ]
-bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ullamcorper turpis. In pretium magna libero, volutpat lacinia risus scelerisque et. Maecenas interdum semper venenatis. Suspendisse id leo fringilla, pharetra sapien eu, gravida velit. Integer neque turpis, vehicula a convallis a, dignissim at ex. Nulla nec bibendum enim. Donec sagittis sodales ante, id luctus turpis. Nullam sed dictum nisi. In hac habitasse platea dictumst. Sed lorem lorem, pretium rhoncus nisl ut, ullamcorper tempus ligula. Vestibulum faucibus ex at bibendum rhoncus. In hac habitasse platea dictumst. Sed eleifend orci ipsum, nec facilisis mi condimentum vel. In eu ligula eleifend, scelerisque ex."
+bio = Faker::Lorem.paragraph(sentence_count: 12)
 languages = ['Spanish', 'French', 'Italian', 'German', 'Korean', 'Japanese', 'Russian', 'Mandarin', 'Hindi', 'Portuguese', 'Bengali']
 
 puts 'Creating seeds...'
@@ -104,8 +104,8 @@ User.create(bio: "Hola! My name is Andres and I have been on LingoBuddy for 3 ye
 
 # REVIEW SEEDS BELOW
 
-60.times do
-  Review.create!(content: bio, rating: rand(3..5), user_id: User.all.sample.id)
+150.times do
+  Review.create!(name: Faker::Name.name, content: Faker::TvShows::SiliconValley.quote, rating: rand(3..5), user_id: User.all.sample.id)
 end
 
 # 4.times do

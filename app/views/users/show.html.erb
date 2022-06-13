@@ -54,7 +54,7 @@
   </div>
   <div class="container">
       <% @user.reviews.each do |review| %>
-        <p><b><%= "Review from #{current_user.first_name} #{current_user.last_name}"%></p></b>
+        <p><b><%= "Review from #{review.name} "%></p></b>
         <% if review.rating == 1  %>
           <span class="fa fa-star checked"></span><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
         <% elsif review.rating == 2  %>
