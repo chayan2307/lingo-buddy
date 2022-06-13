@@ -40,15 +40,6 @@
               <%# </div> %>
             </div>
           </div>
-        <% end %>
-  <% else %>
-    <br>
-    <br>
-    <center><%= link_to "No bookings! Find a Lingo Buddy", users_path, class: "btn-lingo-buddy-green"%></center>
-  <% end %>
-  </div>
-</div>
-
 <div class="container calendar pb-10">
   <%= month_calendar(events: @bookings, end_attribute: :end_time) do |date, booking| %>
     <div class="month-date", style="border-radius:5px; color:gray;" ><center><h6><%=date.strftime("%A, %b %d")%></h6></center></div>
@@ -69,6 +60,14 @@
         <% end %>
       <% end %>
   <% end %>
+  <% end %>
+  <% else %>
+    <br>
+    <br>
+    <center><%= link_to "No bookings! Find a Lingo Buddy", users_path, class: "btn-lingo-buddy-white p-10"%></center>
   </div>
   <br>
   <br>
+  <% end %>
+  </div>
+</div>

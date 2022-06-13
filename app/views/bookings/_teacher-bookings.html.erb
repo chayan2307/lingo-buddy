@@ -18,7 +18,7 @@
                 <% end %>
                 <% else %>
               <%# <div class="body d-flex justify-content-between m-3 "> %>
-                <center><%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn-lingo-buddy-green mb-3 mt-3", style:"display: center" %> </center>
+                <center><%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn-lingo-buddy-green mb-3", style:"display: center" %> </center>
                 <% end %>
               <%# </div> %>
               <% else %>
@@ -28,12 +28,13 @@
                 <% if booking.chatrooms.first.nil? %>
                 <%= simple_form_for [booking, chatroom] do |f| %>
               <%# <div class="body d-flex justify-content-between m-3 "> %>
-                <%= f.submit "Start a chat!", class: "btn-lingo-buddy-green mb-3 mt-3" %>
+
+                <%= f.submit "Start a chat!", class: "btn-lingo-buddy-green mt-3" %>
               <%# </div> %>
                 <% end %>
                 <% else %>
               <%# <div class="body d-flex justify-content-between m-3 "> %>
-                <center><%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn-lingo-buddy-green mb-3 mt-3", style:"display: center" %> </center>
+                <center><%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn-lingo-buddy-green mb-3", style:"display: center" %> </center>
                 <% end %>
               <% end %>
               <%# <div class="body d-flex justify-content-between m-3 "> %>
@@ -42,14 +43,30 @@
             </div>
           </div>
         <% end %>
+        <div class="container calendar pb-10">
+  <%= month_calendar(events: @bookings, end_attribute: :end_time) do |date, booking| %>
+    <div class="month-date", style="border-radius:5px; color:gray;" ><center><h6><%=date.strftime("%A, %b %d")%></h6></center></div>
+      <% my_bookings.each do |booking| %>
+        <% if booking.start_time.to_s.slice(0, 10) == date.to_s && booking.confirmed? == false %>
+          <div class="booking">
+            <p><b><%="#{booking.user_teacher[:languages]} with #{booking.user_student[:first_name]}" %></b></p>
+            <p><em><%= "#{booking.start_time.strftime("%l:%M")} - #{booking.end_time.strftime("%l:%M %p")}" %></p>
+            <p><%= "Booking pending ⌛" %></p>
+          </div>
+        <% elsif booking.start_time.to_s.slice(0, 10) == date.to_s && booking.confirmed %>
+          <div class="booking">
+            <p><b><%="#{booking.user_teacher[:languages]} with #{booking.user_student[:first_name]}" %></b></p>
+            <p><em><%= "#{booking.start_time.strftime("%l:%M")} - #{booking.end_time.strftime("%l:%M %p")}" %></em></p>
+            <p><%= "Booking confirmed ✅" %></p>
+          </div>
+            </div>
+        <% end %>
+      <% end %>
+  <% end %>
   <% else %>
     <br>
     <br>
-    <center><%= link_to "No upcoming bookings", users_path, class: "btn-lingo-buddy-green"%></center>
-  <% end %>
-  </div>
-</div>
-
+    <center><h1 class="pb-3" style="color:white">No upcoming bookings!</h1></center>
 <div class="container calendar pb-10">
   <%= month_calendar(events: @bookings, end_attribute: :end_time) do |date, booking| %>
     <div class="month-date", style="border-radius:5px; color:gray;" ><center><h6><%=date.strftime("%A, %b %d")%></h6></center></div>
@@ -70,6 +87,12 @@
         <% end %>
       <% end %>
   <% end %>
+  <% end %>
+  </div>
+<br>
+<br>
+</div>
+
   </div>
   <br>
   <br>

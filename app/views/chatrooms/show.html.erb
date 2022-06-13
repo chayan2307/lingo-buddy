@@ -1,27 +1,26 @@
-<div class="container chatroom mt-8" data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" >
-  <center><h1 style="color:black">Chat with your LingoBuddy!<%= @chatroom.name %></h1></center>
-
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
-    <% end %>
-  </div>
-      <%= simple_form_for [@booking, @chatroom, @message],
-
-      html: {data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f| %>
-    <div class="container d-flex justify-content-center">
-      <div class="content d-flex m-4">
-        <%= f.input :content,
-        label: false,
-        placeholder: "Message ##{@chatroom.name}",
-        wrapper_html: {class: "message"} %>
-        </div>
-        <div class="button m-4">
-        <%= f.submit "Send",  class: "btn-lingo-buddy-green", style:"background-color:rgb(236, 196, 177)" %>
-        </div>
-    <% end %>
-
+  <div class="container chatroom mt-8" data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" >
+    <center><h1 class="mb-4" style="color:black">Chat with your LingoBuddy!<%= @chatroom.name %></h1></center>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @chatroom.messages.each do |message| %>
+        <% if message.user.teacher? %>
+          <div style="text-align:right"><%= render "messages/message", message: message %></div>
+        <% else %>
+          <div style="text-align:left"><%= render "messages/message", message: message %></div>
+        <% end %>
+      <% end %>
     </div>
-        <center> <%= link_to "Back to your bookings", bookings_path, class: "btn-lingo-buddy-green" %>
-</div>
+    <%= simple_form_for [@booking, @chatroom, @message],
+      html: {data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f| %>
+        <div class="container d-flex justify-content-center">
+          <div class="message-content d-flex m-4">
+            <%= f.input :content,
+            label: false,
+            placeholder: "Write your message",
+            wrapper_html: {class: "message"} %>
+            <%= f.submit "Send",  class: "btn-lingo-buddy-green m-3", style:"background-color:rgb(236, 196, 177); height:50px;" %>
+            </div>
+        <% end %>
+      </div>
+      <center> <%= link_to "Back to your bookings", bookings_path, class: "btn-lingo-buddy-green" %>
+  </div>
