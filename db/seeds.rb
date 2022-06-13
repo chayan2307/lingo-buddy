@@ -13,12 +13,17 @@ url = "https://preply.com/en/online/english-tutors"
 html_file = URI.open(url).read
 html_doc = Nokogiri::HTML(html_file)
 bio = []
+reviews = []
 
 html_doc.search(".styles_ShortBio__1YIcj").each do |element|
    bio << element.text.strip
 end
 
 # bio = Faker::Lorem.paragraph(sentence_count: 15)
+
+html_doc.search(".styles_ReviewContent__-s6j4").each do |review|
+   reviews << review.text.strip
+end
 
 # location = ['40 New Road London','338 Manor Road London', '12 Manor Road London', '4 Church Street
 #   London', '335 Church Road London', '45 West Street London', '20 Victoria Street London', '24 The Green London',
@@ -118,7 +123,7 @@ User.create(bio: "Hola! My name is Andres and I have been on LingoBuddy for 3 ye
 # REVIEW SEEDS BELOW
 
 150.times do
-  Review.create!(name: Faker::Name.name, content: Faker::TvShows::Community.quotes, rating: rand(3..5), user_id: User.all.sample.id)
+  Review.create!(name: Faker::Name.name, content: reviews.sample, rating: rand(3..5), user_id: User.all.sample.id)
 end
 
 # 4.times do
