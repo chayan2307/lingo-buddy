@@ -19,8 +19,8 @@
     </head>
 
     <body>
-        <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
+        <%= render "shared/navbar" %>
         <div><%= yield %></div>
         <%= render 'shared/footer' unless @skip_footer  %>
           <!-- JavaScript Bundle with Popper -->
