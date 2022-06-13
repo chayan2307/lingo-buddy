@@ -4,7 +4,7 @@
       <h3>Lingo Buddy</h3>
     </a>
 
-    <div class="index-box">
+    <div class="index-box", id="search">
       <%= form_tag users_path, method: :get, class:"d-flex" do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search by language or location" %>
         <%= submit_tag "Search", class: "btn-lingo-buddy" %>
