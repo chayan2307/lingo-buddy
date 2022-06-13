@@ -1,0 +1,59 @@
+.simple-calendar {
+  margin: 24px;
+  padding: 24px;
+
+  table {
+    min-height: 80vh;
+    margin: 24px;
+    padding: 24px;
+  }
+  .today {
+    background-color: rgb(184, 68, 15);
+    margin: 24px;
+    padding: 24px;
+
+    h6 {
+      color: white;
+    }
+
+    th {
+      color: white;
+    }
+  }
+}
+
+.booking {
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: rgb(127, 173, 160);
+  transition: background 0.3s ease;
+
+  p {
+    font-family: Helvetica;
+    font-size: 14px;
+  }
+}
+
+.booking:hover {
+  background: rgb(236, 196, 177);
+  color: white;
+}
+
+.month-date {
+  // background-color: white;
+  padding: 0.1em, 0.1em, 0.1em, 0.1em;
+
+  p {
+    font-weight: lighter;
+  }
+}
+
+.calendar {
+  background-color: white;
+  padding-right: 20px;
+  // opacity: 0.9;
+  // padding-bottom: 10px;
+  // margin-bottom: 10px;
+  border-radius: 30px;
+}
