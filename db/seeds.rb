@@ -105,7 +105,7 @@ User.create(bio: "Hola! My name is Andres and I have been on LingoBuddy for 3 ye
 # REVIEW SEEDS BELOW
 
 150.times do
-  Review.create!(name: Faker::Name.name, content: Faker::TvShows::SiliconValley.quote, rating: rand(3..5), user_id: User.all.sample.id)
+  Review.create!(name: Faker::Name.name, content: Faker::TvShows::Community.quotes, rating: rand(3..5), user_id: User.all.sample.id)
 end
 
 # 4.times do
