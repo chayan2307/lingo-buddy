@@ -2,7 +2,25 @@
   <div class="container">
     <br>
     <br>
-    <center><h1>Learn <strong><%= @language.language_name%></strong> with your Lingo Buddy</h1></center>
+    <% if @language.language_name == "Spanish" %>
+      <center><h1>Aprende español con tu amigo Lingo</h1></center>
+    <% elsif @language.language_name == "French" %>
+      <center><h1>Apprenez le français avec votre Lingo Buddy</h1></center>
+    <% elsif @language.language_name == "Italian" %>
+      <center><h1>Impara l'italiano con il tuo amico Lingo</h1></center>
+    <% elsif @language.language_name == "German" %>
+      <center><h1>Lernen Sie Deutsch mit Ihrem Lingo Buddy</h1></center>
+    <% elsif @language.language_name == "Korean" %>
+      <center><h1>링고 친구와 함께 한국어 배우기</h1></center>
+    <% elsif @language.language_name == "Japanese" %>
+      <center><h1>リンゴバディと一緒に日本語を学ぶ</h1></center>
+    <% elsif @language.language_name == "Russian" %>
+      <center><h1>Изучайте русский язык c вашим Lingo Buddy</h1></center>
+    <% elsif @language.language_name == "Hindi" %>
+      <center><h1>अपने लिंगो बडी के साथ हिंदी सीखें</h1></center>
+    <% else %>
+      <center><h1>Learn English with your Lingo Buddy</h1></center>
+    <% end %>
     <br>
     <br>
   </div>
