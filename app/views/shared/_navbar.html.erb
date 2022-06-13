@@ -34,9 +34,14 @@
               <div class="dropdown-content">
                 <a class="dropdown-item" href="/bookings">My Bookings</a>
                 <% if current_user.teacher? == false %>
-                  <a class="dropdown-item" href=<%="users/#{current_user.id}/edit"%>>Become a Lingo Buddy!</a>
+                  <a class="dropdown-item" href=<%="http://localhost:3000/users/#{current_user.id}/edit"%>>Become a Lingo Buddy!</a>
                 <% else %>
-                  <a class="dropdown-item" href=<%="users/#{current_user.id}/edit"%>>My Profile</a>
+                  <% x = "http://localhost:3000/users/#{current_user.id}/edit" %>
+                  <% if request.original_url == x %>
+                    <a class="dropdown-item" href=#>My Profile</a>
+                  <% else %>
+                    <a class="dropdown-item" href=<%="http://localhost:3000/users/#{current_user.id}/edit"%>>My Profile</a>
+                  <% end %>
                 <% end %>
                 <a class="dropdown-item" href="/users/sign_out">Sign Out</a>
               </div>
