@@ -4,7 +4,7 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+  /* .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,15 +50,53 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  } */
+  .new-error-page {
+    background-color: #dfdddd;
+  }
+
+  .heading {
+    background-color:#98959582;
+    padding: 8px;
+    margin: 16px 120px;
+    margin-bottom: 36px;
+    border-radius: 16px;
+    box-shadow:10px 10px 10px #508376;
+  }
+
+  .dialog {
+    margin: 36px;
+    text-align: center;
+  }
+
+  .dialog p {
+    color: #508376;
+  }
+
+  .dialog h1 {
+    font-size: 48px;
+
+  }
+  .dialog h1, h2 {
+    color: rgb(184, 68, 15);
+  }
+
+  .icon{
+    border-radius: 8px;
   }
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="new-error-page">
   <!-- This file lives in public/500.html -->
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <div class="heading">
+        <h1>Sorry, it's Error 500 :( </h1>
+        <h2>The page you were looking for doesn't exist.</h2>
+      </div>
+      <img src="errorpage.jpg" width=500 height=350 class="icon">
+      <p>You may have mistyped the address or the page may have moved.</p>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
   </div>
