@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     # else
     #   @users = User.all
     # end
+
     if params[:query].present?
       @users = User.search_by_location_and_languages(params[:query])
     else
