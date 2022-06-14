@@ -3,7 +3,6 @@
     <a class="navbar-brand mt-2" href="/">
       <h3>Lingo Buddy</h3>
     </a>
-
     <div class="index-box", id="search">
       <%= form_tag users_path, method: :get, class:"d-flex" do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search by language or location" %>
@@ -43,6 +42,7 @@
                     <a class="dropdown-item" href=<%="http://localhost:3000/users/#{current_user.id}/edit"%>>My Profile</a>
                   <% end %>
                 <% end %>
+                <a class="dropdown-item" href="/translations/index">Lingo Buddy Translator</a>
                 <a class="dropdown-item" href="/users/sign_out">Sign Out</a>
               </div>
             </div>

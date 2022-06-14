@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   def show
-    # @skip_footer = true
+    @skip_footer = true
     @booking = Booking.find(params[:booking_id])
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new

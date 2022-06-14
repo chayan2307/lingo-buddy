@@ -87,3 +87,5 @@ gem "pg_search"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 gem "simple_calendar", "~> 2.4"
+gem 'excon'
+gem 'i18n_data'
