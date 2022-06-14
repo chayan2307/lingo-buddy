@@ -1,5 +1,5 @@
 .btn-lingo-buddy {
-  background-color: rgb(143, 124, 124);
+  background-color: #c75625;
   color: white;
   display: inline-block;
   font-weight: 400;
@@ -17,6 +17,7 @@
   border-radius: 0.25rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   font-family: bogart;
+  // margin: 8px;
 }
 
 .btn-lingo-buddy:hover {
@@ -100,8 +101,3 @@
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   font-family: bogart;
 }
-
-// .message {
-//   width: 900px;
-// }
-
