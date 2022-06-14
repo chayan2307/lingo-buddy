@@ -1,7 +1,8 @@
-  <div class="container chatroom mt-8" data-controller="chatroom-subscription"
+<div class="chatpage-background">
+  <div class="container chatroom mt-1" data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" >
-    <center><h1 class="mb-4" style="color:black">Chat with your LingoBuddy!<%= @chatroom.name %></h1></center>
-    <div class="messages" data-chatroom-subscription-target="messages">
+    <center id="chat-background"><h1 class="mb-4" style="color:black">Chat with your LingoBuddy!<%= @chatroom.name %></h1></center>
+    <div id="chat-border" class="messages" data-chatroom-subscription-target="messages">
       <% @chatroom.messages.each do |message| %>
         <% if message.user.teacher? %>
           <div style="text-align:right"><%= render "messages/message", message: message %></div>
@@ -22,5 +23,6 @@
             </div>
         <% end %>
       </div>
-      <center> <%= link_to "Back to your bookings", bookings_path, class: "btn-lingo-buddy-green" %>
+      <center > <%= link_to "Back to your bookings", bookings_path, class: "btn-lingo-buddy-green" %>
   </div>
+</div>
