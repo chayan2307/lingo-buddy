@@ -22,4 +22,8 @@ Rails.application.routes.draw do
   get '/confirm/:id', to: "bookings#confirm"
   root to: "pages#home"
 
+  # Translation API routes below
+  get 'translations/index'
+  get 'translations/translate'
+  post 'translations/translate', as: :translate
 end
