@@ -78,6 +78,9 @@ h2  {
   background-color: white;
   align-items: center;
   text-align: center;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2017%2F05%2Fno-wifi-coffee-shops-ft-blog0517.jpg&q=60);
+  background-repeat: no-repeat;
+  background-size: cover;
 
   h1 {
     color:white;
@@ -92,7 +95,7 @@ h2  {
 }
 
 .card-how-it-works {
-  opacity: 0.5;
+  opacity: 0.7;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -160,4 +163,28 @@ h2  {
 
 .box {
   height:100vh;
+}
+
+#explorebtn {
+  border-color:#f4f4f4;
+  width:400px;
+  color:#f4f4f4;
+  background-color: #cf5016;
+  border-radius:32px;
+  border-width: 8px;
+  opacity: 1;
+  padding: 8px;
+  font-size: 32px;
+}
+
+#explorebtn:hover {
+  color: #f4f4f4;
+  opacity: 1;
+  background-color:rgb(255, 129, 71);
+  transition:1s;
+}
+
+
+.home-card{
+  opacity: 0.9 !important;
 }

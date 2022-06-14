@@ -7,12 +7,12 @@
     <div class="index-box", id="search">
       <%= form_tag users_path, method: :get, class:"d-flex" do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search by language or location" %>
-        <%= submit_tag "Search", class: "btn-lingo-buddy" %>
+        <%= submit_tag "Search", class: "btn-lingo-buddy search-btn" %>
       <% end %>
     </div>
 
      <div class="dropdown">
-      <button class="btn-lingo-buddy me-3" style="background-color:rgb(94, 153, 137)">Languages</button>
+      <button class="btn-lingo-buddy lang-btn" style="background-color:rgb(94, 153, 137)">Languages</button>
       <div class="dropdown-content">
         <% @languages.each do |lang| %>
           <%= link_to lang.language_name, language_path(lang, language_name: lang.language_name), class: "dropdown-item" %>
