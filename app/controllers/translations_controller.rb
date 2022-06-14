@@ -35,7 +35,7 @@ class TranslationsController < ApplicationController
   def api_request(path, method: :get, body: nil)
     params = {
       headers: {
-        # 'x-rapidapi-key': 'a140986108msh11d4ae60f753bc8p18ac8ejsn24a29912d0de',
+        'x-rapidapi-key': ENV['GOOGLE_TRANSLATE_API'],
         'content-type': 'application/x-www-form-urlencoded'
       }
     }
