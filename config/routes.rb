@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   resources :languages
 
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+
   resources :bookings do
     resources :chatrooms, only: [:show, :create] do
       resources :messages, only: :create
