@@ -30,8 +30,12 @@ class BookingsController < ApplicationController
     @booking.user_teacher_id = params[:user_id]
     # @booking.start_time = params.fetch(:start_date, Date.today).to_date
     # @booking.end_time = params.fetch(:end_date, Date.today).to_date
-    @booking.save!
-    redirect_to bookings_path
+    if
+      @booking.save!
+      redirect_to bookings_path
+    else
+      render "show", status: :unprocessable_entity
+    end
   end
 
   def destroy

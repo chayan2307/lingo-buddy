@@ -23,8 +23,6 @@
       <%= simple_form_for ([@user, @booking]) do |f| %>
         <%= f.input :start_time, as: :datetime, html5: true %>
         <%= f.input :end_time, as: :datetime, html5: true %>
-        <%# <%= f.input :name, as: :string, html5: true %>
-        <%# <%= f.input :time, as: :string, placeholder: 'Suggest a time' %>
         <%= f.button :submit, "Submit Booking Request", class: "btn-lingo-buddy search-btn m-1", style:"color:white; background-color:rgb(211, 120, 84)"%>
       <% end %>
     <% else %>
@@ -82,7 +80,7 @@
         <%= f.input :rating, :collection => ["1", "2", "3", "4", "5"],
         :input_html => {:class => 'selectpicker'}, :label => 'Rating', prompt: "Select Rating out of 5" %>
         <%= f.button :submit, "Add your review", class: "btn-lingo-buddy-white", style:"color:white; background-color:rgb(127, 173, 160)"%>
-       <center> <%= link_to "Back to all teachers", users_path, class: "btn-lingo-buddy-green", style:"color:white; background-color:rgb(127, 173, 160)" %>
+       <center> <%= link_to "Back to all Lingo Buddies", users_path, class: "btn-lingo-buddy-green", style:"color:white; background-color:rgb(127, 173, 160)" %>
       <% end %>
     <% end %>
     </div>
