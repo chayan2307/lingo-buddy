@@ -1,4 +1,4 @@
-<div class="index-background" style="background-color:rgb(127, 173, 160)">
+<div class="index-background" style="background-color:rgb(80, 131, 118)">
 <div data-controller="scroll-progress" class="h-2 bg-indigo-400 fixed top-0"></div>
 
 <div class="teachers-heading mt-0">
@@ -52,11 +52,14 @@
             <h6><b>Location: </b><%= "#{user.location}" %></h6>
             <h6><b>Rate: </b><%= "£#{user.rate}" %>/hour</h6>
           </div>
+
           <%# <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary mb-2"%>
         </div>
       <% end %>
     <% end %>
   </div>
+
+
 
   <div class="container m-3" style="position: sticky; top: 0; width: 100%; height: 100vh; border-radius:30px; "
     data-controller="map"

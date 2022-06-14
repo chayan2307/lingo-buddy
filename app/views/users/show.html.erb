@@ -1,4 +1,4 @@
-<div class="background-image-show" style="background-color:rgb(236, 197, 177)">
+<div class="background-image-show" style="background-color:rgb(80, 131, 118)">
 
 <div class="container card-show mt-0 mb-0">
   <% if @user.photo.attached? %>
@@ -9,7 +9,7 @@
   <div class="container mb-5 mt-5">
     <div class="cards" style="width: 32rem;">
       <div class="card-body">
-        <h1 style="color:black"><strong><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></strong></h1>
+        <h1 style="color:white"><strong><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></strong></h1>
         <center><h4><b>Languages Spoken: </b><%= "#{@user.languages}" %></h4></center>
         <h4><b>Location: </b><%= "#{@user.location}" %></h4>
         <h4><b>Rate: </b><%= "£#{@user.rate}" %>/hour</h4>
@@ -19,13 +19,13 @@
 
   <% if current_user != @user %>
     <div class="container">
-      <h5 style="color:black">Send Booking Request</h5>
+      <h5 style="color:white">Send Booking Request</h5>
       <%= simple_form_for ([@user, @booking]) do |f| %>
         <%= f.input :start_time, as: :datetime, html5: true %>
         <%= f.input :end_time, as: :datetime, html5: true %>
         <%# <%= f.input :name, as: :string, html5: true %>
         <%# <%= f.input :time, as: :string, placeholder: 'Suggest a time' %>
-        <%= f.button :submit, "Send Booking Request", class: "btn-lingo-buddy-white", style:"color:white; background-color:rgb(127, 173, 160)"%>
+        <%= f.button :submit, "Submit Booking Request", class: "btn-lingo-buddy-white m-", style:"color:black; background-color:rgb(236, 196, 177)"%>
       <% end %>
     <% else %>
     <% end %>
@@ -80,7 +80,7 @@
         <%= f.input :rating, :collection => ["1", "2", "3", "4", "5"],
         :input_html => {:class => 'selectpicker'}, :label => 'Rating', prompt: "Select Rating out of 5" %>
         <%= f.button :submit, "Add your review", class: "btn-lingo-buddy-white", style:"color:white; background-color:rgb(127, 173, 160)"%>
-       <center> <%= link_to "Back to all teachers", users_path, class: "btn-lingo-buddy-green" %>
+       <center> <%= link_to "Back to all teachers", users_path, class: "btn-lingo-buddy-green", style:"color:white; background-color:rgb(127, 173, 160)" %>
       <% end %>
     <% end %>
     </div>
