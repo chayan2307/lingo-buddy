@@ -41,8 +41,12 @@ h1 {
 
 .container {
   margin: 24px;
+  // margin-bottom: -1px;
 }
 
+#box {
+  margin-bottom: -1px;
+}
 
 .container-search {
   margin-top: 24px;
