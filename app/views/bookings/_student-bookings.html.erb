@@ -13,7 +13,7 @@
                 <h5 class="card-title mb-3"><em>Status</em>: Confirmed  ✅</h5>
                   <%= form_tag orders_path do %>
                     <%= hidden_field_tag 'user_id', booking.user_student.id %>
-                    <%= submit_tag 'Pay now!', class: 'btn btn-primary' %>
+                    <%= submit_tag 'Pay now!', class: "btn-lingo-buddy-green mb-3" %>
                   <% end %>
                 <% if booking.chatrooms.first.nil? %>
                 <%= simple_form_for [booking, chatroom] do |f| %>
