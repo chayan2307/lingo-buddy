@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_13_112018) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_153319) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,6 +81,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_112018) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "checkout_session_id"
+    t.integer "amount_cents", default: 0, null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
@@ -100,6 +110,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_112018) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "rate"
+    t.integer "price_cents", default: 0, null: false
     t.string "location"
     t.string "first_name"
     t.string "last_name"
@@ -120,5 +131,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_112018) do
   add_foreign_key "chatrooms", "bookings"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "orders", "users"
   add_foreign_key "reviews", "users"
 end
