@@ -52,7 +52,6 @@ class TranslationsController < ApplicationController
 
   def fetch_languages
     languages = api_request('language/translate/v2/languages')
-
     keys = languages['data']['languages'].map { |l| l['language'].upcase }
 
     I18nData

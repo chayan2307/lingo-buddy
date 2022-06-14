@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   # Translation API routes below
-  get 'translations/index'
+  get 'translations/index',to: "translations#translate"
   get 'translations/translate'
-  post 'translations/translate', as: :translate
+  post 'translations/translate', to: "translations#translate", as: :translate
 end
