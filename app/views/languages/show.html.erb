@@ -1,3 +1,7 @@
+<% content_for :meta_title, "Learn #{@language.language_name} on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Meet your local Lingo Buddy and start learning #{@language.language_name}" %>
+<% content_for :meta_image, cl_image_path(@language.photo_url) %>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= @language.photo_url %>);">
   <div class="container">
     <br>

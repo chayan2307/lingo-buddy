@@ -1,0 +1,5 @@
+meta_product_name: "Lingo Buddy"
+meta_title: "Lingo Buddy · ❤️ Languages"
+meta_description: "Master a new language, by meeting up with local fluent speakers."
+meta_image: "bannerNobubbles.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
