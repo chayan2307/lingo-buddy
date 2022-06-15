@@ -50,8 +50,10 @@ Language.create(language_name: "Korean", photo_url: "https://wallpaperaccess.com
 Language.create(language_name: "Japanese", photo_url: "https://wallpaperaccess.com/full/39492.jpg")
 Language.create(language_name: "Russian", photo_url: "https://wallpaperaccess.com/full/8198371.jpg")
 
-# STUDENT SEEDS BELOW
-puts "creating users"
+
+User.create(bio: "Hola! My name is Chanyan and I have been on LingoBuddy for 1 years. I love meeting new people and helping them learn Spanish. I live in north of London, hope to see you guys soon!", languages: "Spanish", location: "Wembley, London", email: 'chayan@email.com', rate: 15, first_name: 'Chayan', last_name: 'Agarwal', password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/portrait-of-young-man-in-yellow-tshirt-at-backyard-picture-id1180616266?b=1&k=20&m=1180616266&s=170667a&w=0&h=cMM4OlorRa8ONFxDBQHmAus9H-LkhJ2TDH2px2Hr3M8=")
+
+
 User.create(bio: "Hola! My name is Chanyan and I have been on LingoBuddy for 1 years. I love meeting new people and helping them learn Spanish. I live in north of London, hope to see you guys soon!", languages: "Spanish", location: "Wembley, London", email: 'chayan@email.com', rate: 15, first_name: 'Chayan', last_name: 'Agarwal', password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/portrait-of-young-man-in-yellow-tshirt-at-backyard-picture-id1180616266?b=1&k=20&m=1180616266&s=170667a&w=0&h=cMM4OlorRa8ONFxDBQHmAus9H-LkhJ2TDH2px2Hr3M8=")
 User.create(email: 'deborah@email.com', rate: 10, first_name: 'Deborah', last_name: 'Reis', password: "123456")
 # User.create(email: 'chayan@email.com', rate: 15, first_name: 'Chayan', last_name: 'Agarwal', password: "123456")
@@ -73,7 +75,7 @@ User.create(bio: bio.sample, languages: "Spanish", location: "Bishops Road, Fulh
 User.create(bio: bio.sample, languages: "French", location: "Farm Lane, Fulham, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://t4.ftcdn.net/jpg/05/05/66/21/360_F_505662123_EKv3roI5MF7TLYUV1Gi6B1lzN9H4cbXD.jpg")
 User.create(bio: bio.sample, languages: "French", location: "The Boltons, Kensington and Chelsea, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://images.unsplash.com/photo-1568315081475-d8bbace35dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
 User.create(bio: bio.sample, languages: "French", location: "Goswell Road, Islington, London", email: Faker::Internet.email, rate: 8, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
-User.create(bio: bio.sample, languages: "French", location: "Arlington Road, Camden, London", email: Faker::Internet.email, rate: 12, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://images.unsplash.com/photo-1506956191951-7a88da4435e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80")
+User.create(bio: bio.sample, languages: "French", location: "Arlington Road, Camden, London", email: Faker::Internet.email, rate: 12, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://media-s3-us-east-1.ceros.com/forbes/images/2021/12/06/362f5f8159d82d577afb68ea5141cd35/artboard-2-copy-6-4.jpg")
 User.create(bio: bio.sample, languages: "Italian", location: "Bowland Road, Lambeth, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://t4.ftcdn.net/jpg/02/18/71/87/360_F_218718766_Pc3cFwBDSUqZtWUuBv2utZazq1joM5Eb.jpg")
 User.create(bio: bio.sample, languages: "Italian", location: "Chalk Farm Road, Camden, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
 User.create(bio: bio.sample, languages: "Italian", location: "Bardsley Lane, Greenwich, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://t3.ftcdn.net/jpg/02/16/07/68/360_F_216076852_8Hn4FjfX0Pwr13rx00CMqyhwDGTupYFn.jpg")
@@ -105,8 +107,6 @@ User.create(bio: bio.sample, languages: languages.sample, location: "Blake's Roa
 User.create(bio: bio.sample, languages: languages.sample, location: "Furley Road, Southwark, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://www.realmenrealstyle.com/wp-content/uploads/2021/06/man-20s-style.jpg")
 
 
-
-
 # #TEACHER SEEDS FOR DEMO BELOW
 # User.create(bio: bio, languages: "Spanish", location: "Evering Road, Hackney, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://static.onecms.io/wp-content/uploads/sites/20/2014/10/frances-mcdormand-1-435.jpg")
 # User.create(bio: bio, languages: "Spanish", location: "Mare Street, Hackney, London", email: Faker::Internet.email, rate: 8, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2020-7/Female_Portrait_1296x728-header.jpg?w=1155&h=1528")
@@ -125,6 +125,10 @@ User.create(bio: "Hola! My name is Andres and I have been on LingoBuddy for 3 ye
 
 150.times do
   Review.create!(name: Faker::Name.name, content: reviews.sample, rating: rand(3..5), user_id: User.all.sample.id)
+end
+
+5.times do
+  Review.create!(name: Faker::Name.name, content: reviews.sample, rating: rand(3..5), user_id: User.first.id)
 end
 
 # 4.times do
