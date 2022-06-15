@@ -1,15 +1,17 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-      <ul class="list-unstyled">
-        <li><strong>Issued On:</strong> <%= @order.created_at.to_date %></li>
-        <br>
-        <li><strong>Service:</strong> Lingo Buddy for <strong><%= @order.user.first_name %> <%= @order.user.last_name %></strong></li>
-        <br>
-        <li><strong>Total Amount Paid:</strong> <%= humanized_money_with_symbol @order.amount %></li>
-        </li>
-      </ul>
-    </div>
+<div class="banner" style="height: 100vh; background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-1288712636_468402_zjevz9.jpg);">
+  <div class="container pb-10 mb-10" style="background-color:white; border-radius:30px">
+    <br>
+    <br>
+    <center><h1 style="color:black">Order #<%= @order.id %> <span class="badge badge-primary" style="color:black"><%= @order.state.capitalize %></span></h1></center>
+    <center><ul class="list-unstyled">
+      <li><h3><strong>Issued On:</strong> <%= @order.created_at.to_date %></li></h3>
+      <br>
+      <li><h3><strong>Service:</strong> Lingo Buddy for <strong><%= @order.user.first_name %> <%= @order.user.last_name %></strong></li></h3>
+      <br>
+      <li><h3><strong>Total Amount Paid:</strong> <%= humanized_money_with_symbol @order.amount %></li></h3>
+      </li>
+    </ul></center>
+  <br>
+  <br>
   </div>
-</div>
+  </div>
