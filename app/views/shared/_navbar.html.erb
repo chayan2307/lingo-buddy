@@ -33,7 +33,7 @@
               <div class="dropdown-content">
                 <a class="dropdown-item" href="/bookings">My Bookings</a>
                 <% if current_user.teacher? == false %>
-                  <%= link_to "Become a Lingo buddy", edit_user_path(current_user), class: "dropdown-item" %>
+                  <%= link_to "Become a Lingo Buddy!", edit_user_path(current_user), class: "dropdown-item" %>
                 <% else %>
                   <%= link_to "My Profile", edit_user_path(current_user), class: "dropdown-item" %>
                 <% end %>
