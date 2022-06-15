@@ -14,9 +14,9 @@
     <div class="cards" style="width: 32rem;">
       <div class="card-body">
         <h1 style="color:white"><strong><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></strong></h1>
-        <center><h4><b>Languages Spoken: </b><%= "#{@user.languages}" %></h4></center>
-        <h4><b>Location: </b><%= "#{@user.location}" %></h4>
-        <h4><b>Rate: </b><%= "£#{@user.rate}" %>/hour</h4>
+        <center><h4 style="color:rgb(210, 199, 184)"><em>Languages Spoken: </em><%= "#{@user.languages}" %></h4></center>
+        <h4 style="color:rgb(210, 199, 184)"><em>Location:</em> <%= "#{@user.location}" %></h4>
+        <h4 style="color:rgb(210, 199, 184)"><em>Rate:</em> <%= "£#{@user.rate}" %>/hour</h4>
       </div>
     </div>
   </div>
@@ -25,8 +25,8 @@
     <div class="container">
       <h5 style="color:white">Send Booking Request</h5>
       <%= simple_form_for ([@user, @booking]) do |f| %>
-        <%= f.input :start_time, as: :datetime, html5: true %>
-        <%= f.input :end_time, as: :datetime, html5: true %>
+        <%= f.input :start_time, as: :datetime, html5: true, label: false %>
+        <%= f.input :end_time, as: :datetime, html5: true, label: false %>
         <%= f.button :submit, "Submit Booking Request", class: "btn-lingo-buddy search-btn m-1", style:"color:white; background-color:rgb(211, 120, 84)"%>
       <% end %>
     <% else %>
