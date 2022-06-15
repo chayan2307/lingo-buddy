@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         name: user.first_name,
-        amount: 200,
+        amount: order.amount_cents,
         currency: 'gbp',
         quantity: 1
       }],
