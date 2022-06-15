@@ -51,17 +51,7 @@ Language.create(language_name: "Korean", photo_url: "https://wallpaperaccess.com
 Language.create(language_name: "Japanese", photo_url: "https://wallpaperaccess.com/full/39492.jpg")
 Language.create(language_name: "Russian", photo_url: "https://wallpaperaccess.com/full/8198371.jpg")
 
-<<<<<<< HEAD
-# STUDENT SEEDS BELOW
-puts "creating users"
-
-=======
-
 User.create(bio: "Hola! My name is Chanyan and I have been on LingoBuddy for 1 years. I love meeting new people and helping them learn Spanish. I live in north of London, hope to see you guys soon!", languages: "Spanish", location: "Wembley, London", email: 'chayan@email.com', rate: 15, first_name: 'Chayan', last_name: 'Agarwal', password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/portrait-of-young-man-in-yellow-tshirt-at-backyard-picture-id1180616266?b=1&k=20&m=1180616266&s=170667a&w=0&h=cMM4OlorRa8ONFxDBQHmAus9H-LkhJ2TDH2px2Hr3M8=")
-
-
-User.create(bio: "Hola! My name is Chanyan and I have been on LingoBuddy for 1 years. I love meeting new people and helping them learn Spanish. I live in north of London, hope to see you guys soon!", languages: "Spanish", location: "Wembley, London", email: 'chayan@email.com', rate: 15, first_name: 'Chayan', last_name: 'Agarwal', password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/portrait-of-young-man-in-yellow-tshirt-at-backyard-picture-id1180616266?b=1&k=20&m=1180616266&s=170667a&w=0&h=cMM4OlorRa8ONFxDBQHmAus9H-LkhJ2TDH2px2Hr3M8=")
->>>>>>> 63e56aa25e2070f3ea71b98258b8ed3fd4ff17a5
 User.create(email: 'deborah@email.com', rate: 10, first_name: 'Deborah', last_name: 'Reis', password: "123456")
 # User.create(email: 'chayan@email.com', rate: 15, first_name: 'Chayan', last_name: 'Agarwal', password: "123456")
 User.create(email: 'chun@email.com', rate: 20, first_name: 'Chun', last_name: 'Man', password: "123456")
