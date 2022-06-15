@@ -33,23 +33,18 @@
               <div class="dropdown-content">
                 <a class="dropdown-item" href="/bookings">My Bookings</a>
                 <% if current_user.teacher? == false %>
-                  <a class="dropdown-item" href=<%="http://localhost:3000/users/#{current_user.id}/edit"%>>Become a Lingo Buddy!</a>
+                  <%= link_to "Become a Lingo buddy", edit_user_path(current_user), class: "dropdown-item" %>
                 <% else %>
-                  <% x = "http://localhost:3000/users/#{current_user.id}/edit" %>
-                  <% if request.original_url == x %>
-                    <a class="dropdown-item" href=#>My Profile</a>
-                  <% else %>
-                    <a class="dropdown-item" href=<%="http://localhost:3000/users/#{current_user.id}/edit"%>>My Profile</a>
-                  <% end %>
+                  <%= link_to "My Profile", edit_user_path(current_user), class: "dropdown-item" %>
                 <% end %>
                 <a class="dropdown-item" href="/translations/index">Lingo Buddy Translator</a>
                 <a class="dropdown-item" href="/users/sign_out">Sign Out</a>
               </div>
             </div>
-            <% else %>
+          <% else %>
               <%= link_to "Log In", new_user_session_path, class:"btn-lingo-buddy-green me-3 log-in" %>
               <%= link_to "Sign Up", new_user_registration_path, class:"sign-btn btn-lingo-buddy-white me-2 sign-up" %>
-            <% end %>
+          <% end %>
           </li>
       </ul>
     </div>
