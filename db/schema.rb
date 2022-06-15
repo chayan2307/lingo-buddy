@@ -110,7 +110,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_153319) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "rate"
-    t.integer "price_cents", default: 0, null: false
+    # t.integer "price_cents", default: 0, null: false
     t.string "location"
     t.string "first_name"
     t.string "last_name"
