@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def create
+    @skip_footer = true
     user = User.find(params[:user_id])
     order  = Order.create!(amount: user.rate, state: 'pending', user: current_user)
 
@@ -20,6 +21,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @skip_footer = true
     @order = current_user.orders.find(params[:id])
   end
 end
