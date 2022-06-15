@@ -33,9 +33,46 @@
 
 <div class="lang-banner">
   <div class="container lang-content">
-    <h1>Speaking is the fastest way to fluency</h1>
+    <% if @language.language_name == "Spanish" %>
+      <center><h1>Hablar es el camino más rápido hacia la fluidez.</h1></center>
+    <% elsif @language.language_name == "French" %>
+      <center><h1>Parler est le moyen le plus rapide de parler couramment</h1></center>
+    <% elsif @language.language_name == "Italian" %>
+      <center><h1>Parlare è il modo più veloce per acquisire scioltezza</h1></center>
+    <% elsif @language.language_name == "German" %>
+      <center><h1>Sprechen ist der schnellste Weg zum Sprachfluss</h1></center>
+    <% elsif @language.language_name == "Korean" %>
+      <center><h1>말하기는 유창하게 하는 가장 빠른 방법이다</h1></center>
+    <% elsif @language.language_name == "Japanese" %>
+      <center><h1>スピーキングは流暢さへの最速の方法です</h1></center>
+    <% elsif @language.language_name == "Russian" %>
+      <center><h1>Говорение — самый быстрый способ заговорить</h1></center>
+    <% elsif @language.language_name == "Hindi" %>
+      <center><h1>धाराप्रवाह बोलने का सबसे तेज़ तरीका बोलना है</h1></center>
+    <% else %>
+      <center><h1>Speaking is the fastest way to fluency</h1></center>
+    <% end %>
     <br>
-    <h6>Listen, improve your pronunciation, practice speaking a foreign language with native speakers - no matter where you are.</h6>
+
+    <% if @language.language_name == "Spanish" %>
+      <center><h6>Escuche, mejore su pronunciación y practique hablar un idioma extranjero con hablantes nativos, sin importar dónde se encuentre.</h6></center>
+    <% elsif @language.language_name == "French" %>
+      <center><h6>Écoutez, améliorez votre prononciation et entraînez-vous à parler une langue étrangère avec des locuteurs natifs, où que vous soyez.</h6></center>
+    <% elsif @language.language_name == "Italian" %>
+      <center><h6>Ascolta, migliora la tua pronuncia ed esercitati a parlare una lingua straniera con madrelingua, indipendentemente da dove ti trovi.</h6></center>
+    <% elsif @language.language_name == "German" %>
+      <center><h6>Hören Sie zu, verbessern Sie Ihre Aussprache und üben Sie das Sprechen einer Fremdsprache mit Muttersprachlern – egal wo Sie sind.</h6></center>
+    <% elsif @language.language_name == "Korean" %>
+      <center><h6>어디에 있든 원어민과 함께 듣고, 발음을 개선하고, 외국어 말하기를 연습하세요.</h6></center>
+    <% elsif @language.language_name == "Japanese" %>
+      <center><h6>どこにいても、聞き取り、発音を改善し、ネイティブスピーカーと外国語を話す練習をします。</h6></center>
+    <% elsif @language.language_name == "Russian" %>
+      <center><h6>Слушайте, улучшайте свое произношение и практикуйтесь в разговоре на иностранном языке с носителями языка — где бы вы ни находились.</h6></center>
+    <% elsif @language.language_name == "Hindi" %>
+      <center><h6>सुनो, अपने उच्चारण में सुधार करो, और देशी वक्ताओं के साथ एक विदेशी भाषा बोलने का अभ्यास करो - चाहे आप कहीं भी हों।</h6></center>
+    <% else %>
+      <h6>Listen, improve your pronunciation, and practice speaking a foreign language with native speakers - no matter where you are.</h6>
+    <% end %>
     <br>
     <br>
   </div>
