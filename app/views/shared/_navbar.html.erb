@@ -1,17 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <a class="navbar-brand mt-2 me-2" href="/">
-      <h3>Lingo Buddy</h3>
+      <h3><i class="fa-solid fa-comments" style="color:white"></i> Lingo Buddy</h3>
     </a>
     <div class="index-box", id="search">
       <%= form_tag users_path, method: :get, class:"d-flex" do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search by language or location" %>
-        <%= submit_tag "Search", class: "btn-lingo-buddy search-btn" %>
+        <%= submit_tag "Search", class: "btn-lingo-buddy search-btn", style:"font-size:20px" %>
       <% end %>
     </div>
 
      <div class="dropdown">
-      <button class="btn-lingo-buddy lang-btn" style="background-color:rgb(94, 153, 137)">Languages</button>
+      <button class="btn-lingo-buddy lang-btn" style="background-color:rgb(94, 153, 137); font-size:20px">Languages</button>
       <div class="dropdown-content">
         <% @languages.each do |lang| %>
           <%= link_to lang.language_name, language_path(lang, language_name: lang.language_name), class: "dropdown-item" %>
@@ -42,8 +42,8 @@
               </div>
             </div>
           <% else %>
-              <%= link_to "Log In", new_user_session_path, class:"btn-lingo-buddy-green me-3 log-in" %>
-              <%= link_to "Sign Up", new_user_registration_path, class:"sign-btn btn-lingo-buddy-white me-2 sign-up" %>
+              <%= link_to "Log In", new_user_session_path, class:"btn-lingo-buddy-green me-3 log-in", style:"font-size:20px" %>
+              <%= link_to "Sign Up", new_user_registration_path, class:"sign-btn btn-lingo-buddy-white me-2 sign-up", style:"font-size:20px" %>
           <% end %>
           </li>
       </ul>
