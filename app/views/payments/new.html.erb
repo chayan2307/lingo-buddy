@@ -1,11 +1,12 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"></div>
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong>Lingo Buddy service</strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+<div class="banner" style="height: 100vh; background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-1288712636_468402_zjevz9.jpg);">
+      <div class="container pb-10" style="background-color:white; border-radius:30px">
       <br>
-      <button id="pay" class="btn-lingo-buddy-green" style="width:300px">Pay</button>
+      <br>
+
+      <center><h1 style="color:black">Checkout summary</h1></center>
+      <center><p style="color:black">Purchase of <strong>Lingo Buddy Service</strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p></center>
+      <br>
+      <center><button id="pay" class="btn-lingo-buddy-green" style="width:200px; font-size:30px">Pay</button></center>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -17,6 +18,7 @@
           });
         });
       </script>
-    </div>
-  </div>
+      <br>
+      <br>
+      </div>
 </div>
