@@ -1,5 +1,4 @@
 <% if my_bookings.present? %>
-  <%# <center><h1 style="color:white">Bookings</h1></center> %>
     <div class="container mt-5 mb-10 pb-10" id="box">
       <div class="cards">
         <% my_bookings.each do |booking| %>
@@ -17,34 +16,35 @@
                   <% end %>
                 <% if booking.chatrooms.first.nil? %>
                 <%= simple_form_for [booking, chatroom] do |f| %>
-              <%# <div class="body d-flex justify-content-between m-3 "> %>
                 <%= f.submit "Start a chat with your Buddy!", class: "btn-lingo-buddy-green mb-3" %>
-              <%# </div> %>
+                <br>
+                <%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn-lingo-buddy-green", style:"background-color:red" %>
+
                 <% end %>
                 <% else %>
-              <%# <div class="body d-flex justify-content-between m-3 "> %>
                 <center><%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn-lingo-buddy-green mb-3", style:"display: center" %> </center>
+                <%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn-lingo-buddy-green", style:"background-color:red" %>
+
                 <% end %>
               </div>
               <% else %>
                 <h5 class="card-title mb-3"><em>Status</em>: Pending ⌛</h5>
                 <% if booking.chatrooms.first.nil? %>
                 <%= simple_form_for [booking, chatroom] do |f| %>
-              <%# <div class="body d-flex justify-content-between m-3 "> %>
                 <%= f.submit "Start a chat with your Buddy!", class: "btn-lingo-buddy-green mb-3" %>
-              <%# </div> %>
+                <br>
+                <%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn-lingo-buddy-green", style:"background-color:red" %>
+
+            </div>
               <br>
                 <% end %>
                 <% else %>
-              <%# <div class="body d-flex justify-content-between m-3 "> %>
                 <center><%= link_to "Go to the chat", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn-lingo-buddy-green mb-3", style:"display: center" %> </center>
+               <%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn-lingo-buddy-green", style:"background-color:red" %>
+
                 <% end %>
               <% end %>
-              <%# <div class="body d-flex justify-content-between m-3 "> %>
-                <%= link_to "Cancel this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"}, class: "btn-lingo-buddy-green", style:"background-color:red" %>
-              <%# </div> %>
-            </div>
-          </div>
+           </div>
           <% end %>
             </div>
         <% else %>
