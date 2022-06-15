@@ -39,7 +39,7 @@ languages = ['English', 'Spanish', 'French', 'Italian', 'German', 'Korean', 'Jap
 puts 'Creating seeds...'
 
 # Language SEEDS BELOW
-
+puts "creating laguages"
 Language.create(language_name: "English", photo_url: "https://wallpaperaccess.com/full/32525.jpg")
 Language.create(language_name: "Spanish", photo_url: "https://wallpaperaccess.com/full/1322197.jpg")
 Language.create(language_name: "French", photo_url: "https://wallpaperaccess.com/full/296479.jpg")
@@ -51,7 +51,7 @@ Language.create(language_name: "Japanese", photo_url: "https://wallpaperaccess.c
 Language.create(language_name: "Russian", photo_url: "https://wallpaperaccess.com/full/8198371.jpg")
 
 # STUDENT SEEDS BELOW
-
+puts "creating users"
 User.create(email: 'deborah@email.com', rate: 10, first_name: 'Deborah', last_name: 'Reis', password: "123456")
 # User.create(email: 'chayan@email.com', rate: 15, first_name: 'Chayan', last_name: 'Agarwal', password: "123456")
 User.create(email: 'chun@email.com', rate: 20, first_name: 'Chun', last_name: 'Man', password: "123456")
@@ -60,7 +60,7 @@ User.create(email: 'ella@email.com', rate: 25, first_name: 'Ella', last_name: 'H
 # TEACHER SEEDS BELOW
 
 #FEMALE
-
+puts "creating teachers"
 User.create(bio: bio.sample, languages: "English", location: "Evering Road, Hackney, London", email: Faker::Internet.email, rate: 10, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://i.pinimg.com/originals/97/ed/6b/97ed6b370803649addbf66144c18c194.png")
 User.create(bio: bio.sample, languages: "English", location: "Mare Street, Hackney, London", email: Faker::Internet.email, rate: 8, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/portrait-of-smiling-mixed-race-woman-looking-at-camera-picture-id1319763830?b=1&k=20&m=1319763830&s=170667a&w=0&h=wE44n9yP1nrefeqv5DCl5mE3ouU01FNNHeZPR0yDCWA=")
 User.create(bio: bio.sample, languages: "English", location: "Well Street, Hackney, London", email: Faker::Internet.email, rate: 12, first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, password: "123456", teacher: true, photo_url: "https://images.unsplash.com/photo-1573607217032-18299406d100?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8eW91bmclMjB3b21hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60")
