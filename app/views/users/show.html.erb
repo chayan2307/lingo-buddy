@@ -3,7 +3,6 @@
 <%# <% content_for :meta_image, cl_image_path(@user.photo_url) %>
 
 <div class="background-image-show" style="background-color:rgb(80, 131, 118)">
-
 <div class="container card-show mt-0 mb-0">
   <% if @user.photo.attached? %>
     <%= cl_image_tag @user.photo.key, class: "card-img-top-show mt-5 mb-5", crop: :fill %>
@@ -35,6 +34,7 @@
 </div>
 </div>
 <div class="background-review pt-3 pb-3" style="background-color:rgb(239, 238, 238)">
+<div style="width:1000px; margin-left:200px">
   <div class="container">
     <center><h3 style="color:black"><b>More About <%= "#{@user.first_name}"%></b></h3></center>
     <center><p style="color:black"><%= "#{@user.bio}" %></p></center>
@@ -88,4 +88,5 @@
     <% end %>
     </div>
   </div>
+</div>
 </div>
