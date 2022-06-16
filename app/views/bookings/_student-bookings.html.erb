@@ -25,7 +25,7 @@
       <div class="cards">
         <% my_bookings.each do |booking| %>
           <div class="card-no-hover mb-5 p-3" style="border-radius:30px;">
-            <div class="card-body p-3" style="width:700px;" >
+            <div class="card-body p-3" style="width:600px;" >
               <h3 style="color:black">Upcoming Booking with <%= booking.user_teacher[:first_name] %> <%= booking.user_teacher[:last_name] %></h3>
               <h5><em>Language</em>: <%= booking.user_teacher[:languages] %></h5>
               <h5 class="card-title"><em>Date & Time</em>: <%="#{booking.start_time.strftime("%A %dth %B at %l:%M %p")}" %></h5>
@@ -89,6 +89,7 @@
                     <p><em><%= "#{booking.start_time.strftime("%l:%M")} - #{booking.end_time.strftime("%l:%M %p")}" %></em></p>
                     <p><%= "Booking confirmed ✅" %></p>
                   </div>
+                   <br>
                 <% end %>
                 </div>
               <% end %>
