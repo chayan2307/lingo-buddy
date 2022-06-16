@@ -25,7 +25,7 @@
       <%= simple_form_for ([@user, @booking]) do |f| %>
         <%= f.input :start_time, as: :datetime, html5: true, label: false %>
         <%= f.input :end_time, as: :datetime, html5: true, label: false %>
-        <%= f.button :submit, "Submit Booking Request", class: "btn-lingo-buddy search-btn m-1", style:"font-size:20px; color:white; background-color:rgb(211, 120, 84)"%>
+        <%= f.button :submit, "Book Me!", class: "btn-lingo-buddy search-btn m-1", style:"font-size:20px; color:white; background-color:rgb(211, 120, 84)"%>
       <% end %>
     <% else %>
     <% end %>
