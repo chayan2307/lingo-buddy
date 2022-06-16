@@ -122,15 +122,15 @@ User.create(bio: bio.sample, languages: languages.sample, location: "Furley Road
 User.create(bio: "Hola! My name is Andres and I have been on LingoBuddy for 3 years. I love meeting new people and helping them learn Spanish. I live in East London and my day job is being a web developer. If you would like to meet up send me a booking request and we can chat!", languages: "Spanish", location: "Bowrons Avenue, Wembley, London", email: "teacher@email.com", rate: 5, first_name: "Andres", last_name: "Garcia", password: "123456", teacher: true, photo_url: "https://media.istockphoto.com/photos/portrait-of-young-man-in-yellow-tshirt-at-backyard-picture-id1180616266?b=1&k=20&m=1180616266&s=170667a&w=0&h=cMM4OlorRa8ONFxDBQHmAus9H-LkhJ2TDH2px2Hr3M8=")
 
 # REVIEW SEEDS BELOW
-Review.create!(name: Faker::Name.name, content: "I'm improving my Spanish with the help of Chayan. He puts me at ease to make me talk and so without realising it I get better and better. He is a very smart, funny and lovley person. Super recommended! ;)", rating: rand(4..5), user_id: User.first.id)
-Review.create!(name: Faker::Name.name, content: "Chayan is an excellent teacher. I am learning a lot with him!", rating: rand(4..5), user_id: User.first.id)
-Review.create!(name: Faker::Name.name, content: "Chayan is a really patient teacher. He tutors my nephew and he gives a great effort to engage him with the lessons. He uses different materials and methods to make the lessons more fun for him. Thanks Chayan.", rating: rand(4..5), user_id: User.first.id)
-Review.create!(name: Faker::Name.name, content: "Pleased with the classes, always felt comfortable and relaxed. I can feel the difference in my speaking. Explanation of words always interesting.", rating: rand(4..5), user_id: User.first.id)
-Review.create!(name: Faker::Name.name, content: "Highly recommend Chayan as a tutor for developing english speaking skills. All lessons with Chayan are very engaging and fun. Chayan always finds interesting topics to discuss, helping to expand vocabulary and advance grammar knowledge.", rating: rand(4..5), user_id: User.first.id)
-Review.create!(name: Faker::Name.name, content: "Very friendly, and motivated, I recommend him.", rating: rand(4..5), user_id: User.first.id)
+Review.create!(name: Faker::Name.name, content: "I'm improving my Spanish with the help of Chayan. He puts me at ease to make me talk and so without realising it I get better and better. He is a very smart, funny and lovley person. Super recommended! ;)", rating: 5, user_id: User.first.id)
+Review.create!(name: Faker::Name.name, content: "Chayan is an excellent teacher. I am learning a lot with him!", rating: 5, user_id: User.first.id)
+Review.create!(name: Faker::Name.name, content: "Chayan is a really patient teacher. He tutors my nephew and he gives a great effort to engage him with the lessons. He uses different materials and methods to make the lessons more fun for him. Thanks Chayan.", rating: 5, user_id: User.first.id)
+Review.create!(name: Faker::Name.name, content: "Pleased with the classes, always felt comfortable and relaxed. I can feel the difference in my speaking. Explanation of words always interesting.", rating: 5, user_id: User.first.id)
+Review.create!(name: Faker::Name.name, content: "Highly recommend Chayan as a tutor for developing english speaking skills. All lessons with Chayan are very engaging and fun. Chayan always finds interesting topics to discuss, helping to expand vocabulary and advance grammar knowledge.", rating: 5, user_id: User.first.id)
+Review.create!(name: Faker::Name.name, content: "Very friendly, and motivated, I recommend him.", rating: 5, user_id: User.first.id)
 
 150.times do
-  Review.create!(name: Faker::Name.name, content: reviews.sample, rating: rand(3..5), user_id: User.all.sample.id)
+  Review.create!(name: Faker::Name.name, content: reviews.sample, rating: 4, user_id: User.all.sample.id)
 end
 
 # 5.times do
