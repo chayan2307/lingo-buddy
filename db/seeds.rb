@@ -59,6 +59,9 @@ User.create(email: 'deborah@email.com', rate: 10, first_name: 'Deborah', last_na
 # User.create(email: 'chayan@email.com', rate: 15, first_name: 'Chayan', last_name: 'Agarwal', password: "123456")
 User.create(email: 'chun@email.com', rate: 20, first_name: 'Chun', last_name: 'Man', password: "123456")
 User.create(email: 'ella@email.com', rate: 25, first_name: 'Ella', last_name: 'Herlihy', password: "123456", photo_url: "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg")
+User.create(email: 'test1@email.com', rate: 25, first_name: 'John', last_name: 'Smith', password: "123456")
+User.create(email: 'test2@email.com', rate: 25, first_name: 'Mary', last_name: 'Barnes', password: "123456")
+User.create(email: 'test3@email.com', rate: 25, first_name: 'David', last_name: 'Harwood', password: "123456")
 
 # TEACHER SEEDS BELOW
 

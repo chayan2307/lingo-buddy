@@ -1,24 +1,4 @@
 <% if my_bookings.present? %>
-  <div class="container calendar pb-10">
-    <%= month_calendar(events: @bookings, end_attribute: :end_time) do |date, booking| %>
-    <div class="month-date", style="border-radius:5px; color:gray;" ><center><h6><%=date.strftime("%A, %b %d")%></h6></center></div>
-      <% my_bookings.each do |booking| %>
-        <% if booking.start_time.to_s.slice(0, 10) == date.to_s && booking.confirmed? == false %>
-          <div class="booking">
-            <p><b><%="#{booking.user_teacher[:languages]} with #{booking.user_student[:first_name]}" %></b></p>
-            <p><em><%= "#{booking.start_time.strftime("%l:%M")} - #{booking.end_time.strftime("%l:%M %p")}" %></p>
-            <p><%= "Booking pending ⌛" %></p>
-          </div>
-        <% elsif booking.start_time.to_s.slice(0, 10) == date.to_s && booking.confirmed %>
-          <div class="booking">
-            <p><b><%="#{booking.user_teacher[:languages]} with #{booking.user_student[:first_name]}" %></b></p>
-            <p><em><%= "#{booking.start_time.strftime("%l:%M")} - #{booking.end_time.strftime("%l:%M %p")}" %></em></p>
-            <p><%= "Booking confirmed ✅" %></p>
-          </div>
-        <% end %>
-      <% end %>
-  <% end %>
-  </div>
     <div class="container mt-5 mb-10 pb-10 ">
       <div class="cards ">
         <% my_bookings.each do |booking| %>
@@ -50,13 +30,13 @@
                 <% end %>
               <% end %>
             </div>
-            <br>
           </div>
         <% end %>
   <% else %>
     <br>
     <br>
     <center><h1 class="pb-3" style="color:white">No upcoming bookings!</h1></center>
+    <% end %>
     <div class="container calendar pb-10">
       <%= month_calendar(events: @bookings, end_attribute: :end_time) do |date, booking| %>
         <div class="month-date", style="border-radius:5px; color:gray;" ><center><h6><%=date.strftime("%A, %b %d")%></h6></center></div>
@@ -74,13 +54,10 @@
                 <p><%= "Booking confirmed ✅" %></p>
             </div>
             </div>
+
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
-    <br>
-  </div>
-  <br>
   </div>
   <br>
 </div>

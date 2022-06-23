@@ -1,21 +1,20 @@
 <% content_for :meta_title, "Translator on #{DEFAULT_META["meta_product_name"]}" %>
 
 <div class="banner-translator" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(/assets/banner2.jpg);">
-<div class="container p-5 mt-0" style="background-color:white; border-radius:30px">
-  <h1 class="text-center pb-3" style="color:black">Lingo Buddy Translator</h1>
-  <%= form_with url: translate_path, method: :post, local: true, data: { turbo: false } do %>
-    <div class="row">
-      <div class="col-lg-5">
-        <div class="form-group">
-          <label for="source">Translate</label>
-          <%= text_area_tag :source, @source, class: 'form-control', style: 'width: 100%; height: 100px' %>
+  <div class="container p-5 mt-0" style="background-color:white; border-radius:30px">
+    <h1 class="text-center pb-3" style="color:black">Lingo Buddy Translator</h1>
+    <%= form_with url: translate_path, method: :post, local: true, data: { turbo: false } do %>
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="form-group">
+            <label for="source">Translate</label>
+            <%= text_area_tag :source, @source, class: 'form-control', style: 'width: 100%; height: 100px' %>
+          </div>
+          <div class="form-group">
+            <label for="source_language">From</label>
+            <%= select_tag :source_language, options_for_select(@translate_languages, @source_language), class: 'form-control' %>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="source_language">From</label>
-          <%= select_tag :source_language, options_for_select(@translate_languages, @source_language), class: 'form-control' %>
-        </div>
-      </div>
 
       <div class="col-lg-2 d-flex align-items-center justify-content-center">
         <button type="submit" class="btn-lingo-buddy-green">
@@ -33,10 +32,9 @@
           <label for="destination_language">To</label>
           <%= select_tag :destination_language, options_for_select(@translate_languages, @destination_language), class: 'form-control' %>
         </div>
-      <br>
       </div>
-      <marquee direction="left" height="45px" width="100%" bgcolor="white" style="font-size:28px" hspace="0">Bonjour 🇫🇷    Hola 🇪🇸    Nǐn hǎo 🇨🇳    Ciao 🇮🇹    Konnichiwa 🇯🇵    Guten Tag 🇩🇪    Olá 🇵🇹    Anyoung haseyo 🇰🇷    Hej 🇩🇰    Goedendag 🇳🇱    Yassas 🇬🇷    Selamat siang 🇮🇩    Namaste 🇮🇳    God dag 🇸🇪    </marquee>
-    </div>
-  <% end %>
-</div>
+        <marquee direction="left" height="45px" width="100%" bgcolor="white" style="font-size:28px" hspace="0">Bonjour 🇫🇷    Hola 🇪🇸    Nǐn hǎo 🇨🇳    Ciao 🇮🇹    Konnichiwa 🇯🇵    Guten Tag 🇩🇪    Olá 🇵🇹    Anyoung haseyo 🇰🇷    Hej 🇩🇰    Goedendag 🇳🇱    Yassas 🇬🇷    Selamat siang 🇮🇩    Namaste 🇮🇳    God dag 🇸🇪    </marquee>
+      </div>
+    <% end %>
+  </div>
 </div>

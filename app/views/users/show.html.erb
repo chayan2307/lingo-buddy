@@ -25,7 +25,7 @@
       <%= simple_form_for ([@user, @booking]) do |f| %>
         <%= f.input :start_time, as: :datetime, html5: true, label: false %>
         <%= f.input :end_time, as: :datetime, html5: true, label: false %>
-        <%= f.button :submit, "Submit Booking Request", class: "btn-lingo-buddy search-btn m-1", style:"font-size:20px; color:white; background-color:rgb(211, 120, 84)"%>
+        <%= f.button :submit, "Book Me!", class: "btn-lingo-buddy search-btn m-1", style:"font-size:20px; color:white; background-color:rgb(211, 120, 84)"%>
       <% end %>
     <% else %>
     <% end %>
@@ -34,18 +34,18 @@
 </div>
 </div>
 <div class="background-review pt-3 pb-3" style="background-color:rgb(239, 238, 238)">
-<div style="width:1000px; margin-left:200px">
-  <div class="container">
+<div>
+  <div class="container" style="width:900px">
     <center><h3 style="color:black"><b>More About <%= "#{@user.first_name}"%></b></h3></center>
     <center><p style="color:black"><%= "#{@user.bio}" %></p></center>
     <hr>
   </div>
 
 <center><h3 style="color:black"><b>Reviews</b></h3></center>
-  <div class="container"  style="width: 600px; color:black">
+  <div class="container"  style="width: 900px; color:black">
     <% if @user.reviews.blank? %>
       <center><h3 style="color:black"><strong>Be the first to leave a review for <%= @user.first_name %></strong></h3></center>
-      <div class="container">
+      <div class="container" style="width:900px;">
       <%= simple_form_for([@user, @review]) do |f| %>
         <%= f.error_notification %>
         <%= f.input :content, :label => 'Review', prompt: "Enter your review" %>
@@ -57,7 +57,7 @@
     </div>
     <% else %>
   </div>
-  <div class="container">
+  <div class="container" style="width:900px;">
       <% @user.reviews.each do |review| %>
         <p><b><%= "Review from #{review.name} "%></p></b>
         <% if review.rating == 1  %>
@@ -76,7 +76,7 @@
         <hr>
       <% end %>
     </div>
-    <div class="container">
+    <div class="container" style="width:900px;">
       <center><h3 style="color:black"><strong>Leave a review for <%= @user.first_name %></strong></h3></center>
       <%= simple_form_for([@user, @review]) do |f| %>
         <%= f.input :content, :label => 'Review', prompt: "Enter your review",  placeholder: "Enter your review" %>

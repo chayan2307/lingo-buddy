@@ -1,18 +1,5 @@
 class UsersController < ApplicationController
   def index
-    # The `geocoded` scope filters only flats with coordinates
-    ## working search
-    # if params[:query].present?
-    #   sql_query = <<~SQL
-    #   users.location ILIKE :query
-    #   OR users.languages ILIKE :query
-    #   OR users.first_name ILIKE :query
-    #   OR users.last_name ILIKE :query
-    # SQL
-    #   @users = User.where(sql_query, query: "%#{params[:query]}%")
-    # else
-    #   @users = User.all
-    # end
 
     if params[:query].present?
       @users = User.search_by_location_and_languages(params[:query])

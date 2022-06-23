@@ -39,10 +39,10 @@
     </head>
 
     <body>
-        <%= render "shared/flashes" %>
-        <%= render "shared/navbar" %>
-        <div><%= yield %></div>
-        <%= render 'shared/footer' unless @skip_footer  %>
+      <%# <%= render "shared/flashes" %>
+      <%= render "shared/navbar" %>
+      <div><%= yield %></div>
+      <%= render 'shared/footer' unless @skip_footer  %>
        <!-- Translation API links below -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -51,6 +51,5 @@
       <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
       <script src="https://kit.fontawesome.com/4ee419a530.js" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     </body>
 </html>

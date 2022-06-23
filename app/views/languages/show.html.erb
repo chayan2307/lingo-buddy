@@ -1,6 +1,6 @@
 <% content_for :meta_title, "Learn #{@language.language_name} on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Meet your local Lingo Buddy and start learning #{@language.language_name}" %>
-<% content_for :meta_image, cl_image_path(@language.photo_url) %>
+<%# <% content_for :meta_image, cl_image_path(@language.photo_url) %>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= @language.photo_url %>);">
   <div class="container">
@@ -46,11 +46,6 @@
   </div>
 </div>
 
-<a href="#sec-2">
-      <div class="scroll-down"></div>
-    </a>
-
-
 <div class="lang-banner">
   <div class="container lang-content">
       <center><h1>Speaking is the fastest way to fluency</h1></center>
@@ -63,52 +58,51 @@
 
 
 <center><div class="teachers-heading pt-4 mb-0" id="sec-2">
-<h1 style="color:white"><%= "Top #{@language.language_name} Speaking Lingo Buddies" %></h1>
-<%# <center><h1 style="color:white">Top Lingo Buddies</h1></center> %>
-<center><div class="container languages-grid mb-0 pb-4">
-  <div class="card-languages-grid mb-2 mt-3 pr-0">
-    <% @filtered_users[0..3].each do |user| %>
-      <% if user.teacher %>
-        <div class="card" style="width: 16rem; border-radius:30px;">
-          <img src="<%= user.photo_url %>" class="card-img-top" alt="Profile Picture" style="border-radius:30px;">
-          <% end %>
-          <div class="mt-3"><h5 style="color:black" class="card-title mt-2"><%= link_to "#{user.first_name.capitalize} #{user.last_name.capitalize}", user_path(user)%></h5></div>
-          <div class="card-body">
-            <% ratings = [] %>
-            <% user.reviews.each do |review| %>
-              <% ratings << review.rating %>
+  <h1 style="color:white"><%= "Top #{@language.language_name} Speaking Lingo Buddies" %></h1>
+  <center><div class="container languages-grid mb-0 pb-4">
+    <div class="card-languages-grid mb-2 mt-3 pr-0">
+      <% @filtered_users[0..3].each do |user| %>
+        <% if user.teacher %>
+          <div class="card" style="width: 16rem; border-radius:30px;">
+            <img src="<%= user.photo_url %>" class="card-img-top" alt="Profile Picture" style="border-radius:30px;">
             <% end %>
-            <% average_rating = ratings.inject{ |sum, el| sum + el }.to_f / ratings.size.round %>
-            <% average_rating %>
-            <% if average_rating == 1  %>
-              <center><span class="fa fa-star checked"><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
-              <br>
-              <br>
-            <% elsif average_rating <= 2  %>
-              <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
-              <br>
-              <br>
-            <% elsif average_rating <= 3  %>
-              <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
-              <br>
-              <br>
-            <% elsif average_rating <= 4 %>
-              <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
-              <br>
-              <br>
-            <% elsif average_rating <= 5 %>
-              <center><span class="fa fa-star checked"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span></span>
-              <br>
-              <br>
-            <% elsif user.reviews.empty? %>
-              <center><em><h6>Not enough reviews yet</h6></em>
-              <br>
-            <% else %>
-          <% end %>
-            <h6><b>Rate: </b><%= "£#{user.rate}" %>/hour</h6>
+            <div class="mt-3"><h5 style="color:black" class="card-title mt-2"><%= link_to "#{user.first_name.capitalize} #{user.last_name.capitalize}", user_path(user)%></h5></div>
+            <div class="card-body">
+              <% ratings = [] %>
+              <% user.reviews.each do |review| %>
+                <% ratings << review.rating %>
+              <% end %>
+              <% average_rating = ratings.inject{ |sum, el| sum + el }.to_f / ratings.size.round %>
+              <% average_rating %>
+              <% if average_rating == 1  %>
+                <center><span class="fa fa-star checked"><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                <br>
+                <br>
+              <% elsif average_rating <= 2  %>
+                <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                <br>
+                <br>
+              <% elsif average_rating <= 3  %>
+                <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                <br>
+                <br>
+              <% elsif average_rating <= 4 %>
+                <center><span class="fa fa-star checked"><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star checked" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                <br>
+                <br>
+              <% elsif average_rating <= 5 %>
+                <center><span class="fa fa-star checked"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span></span>
+                <br>
+                <br>
+              <% elsif user.reviews.empty? %>
+                <center><em><h6>Not enough reviews yet</h6></em>
+                <br>
+              <% else %>
+            <% end %>
+              <h6><b>Rate: </b><%= "£#{user.rate}" %>/hour</h6>
+            </div>
+            <%# <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary mb-2"%>
           </div>
-          <%# <%=link_to "Find out more".html_safe, user_path(user), class: "mt-auto btn btn-primary mb-2"%>
-        </div>
-      <% end %>
-    </div>
-  </div>
+        <% end %>
+      </div>
+</div>
